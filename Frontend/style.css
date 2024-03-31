@@ -1,0 +1,85 @@
+@import url("https://fonts.googleapis.com/css2?family=Mukta:wght@200;300;400;500;600;700;800&family=Poppins&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgb(222, 182, 208);
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+}
+
+.navbar {
+  font-size: 0.8rem;
+  height: 5.5rem;
+  background-color: cornsilk;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.hindi {
+  font-family: "Mukta", sans-serif;
+  font-style: normal;
+  font-size: 1.75rem;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.blinkText {
+  animation: blink 1.2s infinite;
+  font-size: 1.5rem;
+  padding: 1rem;
+}
+
+.box {
+  background-color: white;
+  flex: 1;
+  width: 75%;
+  min-height: 400px;
+  display: flex;
+}
+
+.logo {
+  position: relative;
+  width: 50%;
+  padding: 20px;
+}
+
+.logo img {
+  width: 300px;
+  height: 300px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+}
+
+.formPlace {
+  width: 50%;
+  padding: 20px;
+}
