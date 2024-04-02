@@ -15,7 +15,6 @@ body {
 }
 
 .navigationbar {
-  font-size: 0.8rem;
   height: 6rem;
   background-color: cornsilk;
   display: flex;
@@ -60,48 +59,48 @@ main {
   background-color: #f5f5f5;
   flex: 1;
   min-width: 75%;
-  max-width: 95%;
+  max-width: 90%;
   min-height: 400px;
   display: flex;
   border-radius: 1rem;
   margin-bottom: 1rem;
+  overflow-x: auto;
 }
 
-.logo {
-  position: relative;
-  width: 50%;
-  padding: 20px;
+/* CSS for Table form format */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
 }
 
-.logo img {
-  width: 300px;
-  height: 300px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  border-radius: 50%;
+table,
+th,
+td {
+  border: 1px solid #ddd;
 }
 
-.formPlace {
-  width: 50%;
-  padding: 20px;
+th,
+td {
+  text-align: left;
 }
-
-.PageNotFound {
-  font-size: 4rem;
-  padding-top: 10rem;
-}
+*/
 
 /* CSS for form styling */
+.form-container {
+  width: 100%;
+  overflow-x: auto;
+}
+
 form {
   margin-bottom: 20px;
   padding: 20px;
+  max-width: 100%;
 }
 
 form label {
   display: inline-block;
-  width: 200px;
+  width: 100%;
   margin-bottom: 10px;
   font-weight: bold;
 }
@@ -112,16 +111,15 @@ form input[type="number"],
 form input[type="tel"],
 form input[type="email"],
 form select {
-  width: 80%;
+  width: 100%;
   margin-bottom: 10px;
   padding: 6px;
   border: 1px solid #ccc;
   border-radius: 5px;
-  box-sizing: border-box;
 }
 
 form input[type="file"] {
-  width: 80%;
+  width: 100%; /* Make file inputs full width for small devices */
   margin-bottom: 10px;
 }
 
@@ -138,7 +136,7 @@ form legend {
 
 form fieldset label {
   display: inline-block;
-  width: 80%;
+  width: 100%;
   margin-bottom: 5px;
 }
 
@@ -149,7 +147,7 @@ form fieldset label {
 
 .btn-container button {
   padding: 10px 20px;
-  margin: 0 10px;
+  margin: 10px;
   font-size: 16px;
   border: none;
   border-radius: 5px;
@@ -178,4 +176,56 @@ td {
 th,
 td {
   text-align: left;
+  padding: 8px;
+}
+
+/* Media Queries */
+@media (max-width: 560px) {
+  .navigationbar {
+    min-height: 80px;
+  }
+  .navigationbar h1 {
+    font-size: 20px;
+  }
+}
+@media only screen and (min-width: 768px) {
+  /* Medium devices (tablets, 768px and up) */
+  form label {
+    width: 200px;
+  }
+
+  form input[type="text"],
+  form input[type="date"],
+  form input[type="number"],
+  form input[type="tel"],
+  form input[type="email"],
+  form select,
+  form input[type="file"] {
+    width: calc(50% - 20px);
+    margin-right: 20px;
+  }
+
+  form fieldset label {
+    width: 200px; /* Reset fieldset label width for medium devices */
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  /* Large devices (desktops, 992px and up) */
+  form label,
+  form fieldset label {
+    width: 250px;
+  }
+}
+
+@media (min-width: 768px) {
+  form input[type="text"],
+  form input[type="date"],
+  form input[type="number"],
+  form input[type="tel"],
+  form input[type="file"],
+  form input[type="email"],
+  form select {
+    width: 90%; /* Set input width to 100% for medium and large devices */
+  }
 }
