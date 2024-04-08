@@ -69,8 +69,8 @@ main {
 
 .logo {
   position: relative;
-  width: 50%;
   padding: 20px;
+  width: 50%;
 }
 
 .logo img {
@@ -84,7 +84,7 @@ main {
 }
 
 .formPlace {
-  width: 50%;
+  width: 60%;
   padding: 20px;
   display: flex;
   flex-direction: column;

@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faculty Application Form</title>
+    <link rel="icon" href="IITP_logo.svg.png" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <div class="navigationbar">
+            <h1 class="hindi">भारतीय प्रौद्योगिकी संस्थान पटना</h1>
+            <h1>Indian Institute of Technology Patna</h1>
+        </div>
+    </header>
+
+    <main>
+        <h3 class="blinkText">Application for Faculty Position</h3>
+        <div class="box">
+            <div class="row mt-4 mx-2 ">
+                <div class="col-6">
+                    <h3>Welcome Animesh Tripathy</h3>
+                </div>
+                <div class="col-5">
+                    <h3>Application Number : 12345678</h3>
+                </div>
+                <div class="col-1">
+                    <button type="button" class="btn btn-warning">Logout</button>
+                </div>
+            </div>
+            <hr>
+
+            <form action="" method="post">
+                <!-- Section 5: Summary of Publications -->
+                <section>
+                    <h4>5. Summary of Publications</h4>
+                    <fieldset>
+                        <div class="row">
+                            <div class="col">
+                                <label for="international_journal_papers" class="w-100">No. of International Journal
+                                    Papers:</label>
+                                <input type="number" id="international_journal_papers"
+                                    name="international_journal_papers" required>
+                            </div>
+                            <div class="col">
+                                <label for="national_journal_papers" class="w-100">No. of National Journal
+                                    Papers:</label>
+                                <input type="number" id="national_journal_papers" name="national_journal_papers"
+                                    required>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col">
+                                <label for="international_conference_papers" class="w-100">No. of International
+                                    Conference
+                                    Papers:</label>
+                                <input type="number" id="international_conference_papers"
+                                    name="international_conference_papers" required>
+                            </div>
+                            <div class="col">
+                                <label for="national_conference_papers" class="w-100">No. of National Conference
+                                    Papers:</label>
+                                <input type="number" id="national_conference_papers" name="national_conference_papers"
+                                    required>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col">
+                                <label for="patents" class="w-100">No. of Patent(s) (filed/published/granted):</label>
+                                <input type="number" id="patents" name="patents" required>
+                            </div>
+                            <div class="col">
+                                <label for="books" class="w-100">No. of Book(s):</label>
+                                <input type="number" id="books" name="books" required>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-6">
+                                <label for="book_chapters" class="w-100">No. of Book Chapter(s):</label>
+                                <input type="number" id="book_chapters" name="book_chapters" required>
+                            </div>
+                        </div>
+                    </fieldset>
+                </section>
+
+                <!-- Section 6: List of 10 Best Publications (Journal/Conference) -->
+                <section>
+                    <h4>6. List of 10 Best Publications (Journal/Conference)</h4>
+
+                    <fieldset>
+                        <legend>List of 10 Best Publications (Journal/Conference)</legend>
+                        <div class="table-responsive">
+                            <table class="table">
+                                <tr>
+                                    <th>S. No.</th>
+                                    <th>Author(s)</th>
+                                    <th>Title</th>
+                                    <th>Name of Journal/Conference</th>
+                                    <th>Year, Vol., Page</th>
+                                    <th>Impact Factor</th>
+                                    <th>DOI</th>
+                                    <th>Status</th>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td><input type="text" id="publication_author" name="publication_author"></td>
+                                    <td><input type="text" id="publication_title" name="publication_title">
+                                    <td><input type="text" id="publication_name" name="publication_name">
+                                    <td><input type="text" id="publication_year_vol_page"
+                                            name="publication_year_vol_page">
+                                    </td>
+                                    <td><input type="text" id="publication_impact" name="publication_impact"></td>
+                                    <td><input type="text" id="publication_doi" name="publication_doi"></td>
+                                    <td><select id="publication_status" name="publication_status">
+                                            <option value="Published">Published</option>
+                                            <option value="Accepted">Accepted</option>
+                                        </select></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </fieldset>
+                </section>
+
+                <!-- Section 7: List of Patent(s), Book(s), Book Chapter(s) -->
+                <section>
+                    <h4>7. List of Patent(s), Book(s), Book Chapter(s)</h4>
+
+                    <!-- Subsection A: Present Employment -->
+                    <fieldset>
+                        <legend>(A) Patent(s)</legend>
+                        <div class="table-responsive">
+                            <table class="table">
+                                <tr>
+                                    <th>S. No.</th>
+                                    <th>Inventor(s)</th>
+                                    <th>Title of Patent</th>
+                                    <th>Country of Patent</th>
+                                    <th>Patent Number</th>
+                                    <th>Date of Filing</th>
+                                    <th>Date of Published</th>
+                                    <th>Status Filed/Published/Granted</th>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td><input type="text" id="inventor" name="inventor"></td>
+                                    <td><input type="text" id="patent_title" name="patent_title">
+                                    <td><input type="text" id="patent_country" name="patent_country">
+                                    <td><input type="text" id="patent_number" name="patent_number">
+                                    </td>
+                                    <td><input type="date" id="patent_filing" name="patent_filing"></td>
+                                    <td><input type="date" id="patent_published" name="patent_published"></td>
+                                    <td><input type="number" id="patent_status" name="patent_status"></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </fieldset>
+
+                    <!-- Subsection B: Book(s) -->
+                    <fieldset>
+                        <legend>(B) Book(s)</legend>
+                        <div class="table-responsive">
+                            <table class="table">
+                                <tr>
+                                    <th>S. No.</th>
+                                    <th>Author(s)</th>
+                                    <th>Title of the Book</th>
+                                    <th>Year of Publication</th>
+                                    <th>ISBN</th>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td><input type="text" id="book_author" name="book_author"></td>
+                                    <td><input type="text" id="book_title" name="book_title">
+                                    <td><input type="text" id="book_year" name="book_year">
+                                    <td><input type="text" id="book_isbn" name="book_isbn">
+                                    </td>
+
+                                </tr>
+                            </table>
+                        </div>
+                    </fieldset>
+
+                    <!-- Subsection C: Book Chapter(s) -->
+                    <fieldset>
+                        <legend>(C) Book Chapter(s)</legend>
+                        <div class="table-responsive">
+                            <table class="table">
+                                <tr>
+                                    <th>S. No.</th>
+                                    <th>Author(s)</th>
+                                    <th>Title of the Book Chapter(s)</th>
+                                    <th>Year of Publication</th>
+                                    <th>ISBN</th>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td><input type="text" id="book_chapter_author" name="book_chapter_author"></td>
+                                    <td><input type="text" id="book_chapter_title" name="book_chapter_title">
+                                    <td><input type="text" id="book_chapter_year" name="book_chapter_year">
+                                    <td><input type="text" id="book_chapter_isbn" name="book_chapter_isbn">
+                                    </td>
+
+                                </tr>
+                            </table>
+                        </div>
+                    </fieldset>
+                </section>
+
+                <!-- Section 8: Google Scholar Link  -->
+                <section>
+                    <h4>8. Google Scholar Link</h4>
+                    <div class="row">
+                        <div class="col-2">
+                            <label for="google_scholar_link" class="w-100">Google Scholar Link:</label>
+                        </div>
+                        <div class="col-10">
+                            <input type="text" id="google_scholar_link" name="google_scholar_link" required>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Save and Next button -->
+                <div class="btn-container">
+                    <button type="button" id="prevButton">Go to Previous Page</button>
+                    <button type="submit" id="nextButton">Save And Next</button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
