@@ -1,92 +1,64 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Faculty Register</title>
-    <link rel="icon" href="{% static 'app/IITP_logo.svg.png' %}" type="image/x-icon">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="{% static 'app/initial.css' %}">
-</head>
-
-<body>
-    <header>
-        <div class="navigationbar">
-            <h1 class="hindi">भारतीय प्रौद्योगिकी संस्थान पटना</h1>
-            <h1>Indian Institute of Technology Patna</h1>
-        </div>
-    </header>
-
-    <main>
-        <h3 class="blinkText">Application for Faculty Position</h3>
-        <div class="box">
-            <div class="logo">
-                <img src="{% static 'app/IITP_logo.svg.png' %}" alt="IIT Patna Logo">
+{% extends "base_login.html" %}
+{% block title %}Faculty Forgot Password{% endblock title %}
+{% block content %}
+<div class="formPlace">
+    <h1 class="mb-4">REGISTER HERE</h1>
+    {% for message in messages %}
+    <h3>{{message}}</h3>
+    {% endfor %}
+    <form action="" method="POST" class="formPage w-100">
+        {% csrf_token %}
+        <div class="row w-100">
+            <div class="col">
+                <input type="text" class="form-control" id="first_name" name="first_name" placeholder="First Name">
             </div>
-            <div class="formPlace">
-                <h1 class="mb-4">REGISTER HERE</h1>
-                <form action="#" class="formPage w-100">
-                    <div class="row w-100">
-                        <div class="col">
-                            <input type="text" class="form-control" id="first_name" placeholder="First Name">
-                        </div>
-                        <div class="col">
-                            <input type="text" class="form-control" id="last_name" placeholder="Last Name">
-                        </div>
-                    </div>
-
-                    <div class="row w-100 mt-2">
-                        <div class="col-6">
-                            <input type="email" class="form-control w-100" id="email" placeholder="Email Address">
-                        </div>
-                        <div class="col-6">
-                            <select name="category" class="form-control" id="category">
-                                <option value="GEN">GEN</option>
-                                <option value="EWS">EWS</option>
-                                <option value="OBC">OBC</option>
-                                <option value="SC">SC</option>
-                                <option value="ST">ST</option>
-                                <option value="PWD">PWD</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <div class="row w-100 m-2">
-                        <div class="col">
-                            <input type="password" class="form-control" id="password" placeholder="Password">
-                        </div>
-                        <div class="col">
-                            <input type="password" class="form-control" id="re-password" placeholder="Re-type Password">
-                        </div>
-                    </div>
-                    <p class="my-3">
-                        <strong>Note:</strong><br>
-                        1. Applicant should kindly check their email for activation link to access the portal.<br>
-                        2. Please check SPAM folder also, in case activation link is not received in INBOX.<br>
-                        3. Applicant applying for more than one position/ department should use different email id for
-                        each
-                        application.
-                    </p>
-
-                    <button type="submit" class="btn btn-primary btn-block my-2 px-3">Register</button>
-                </form>
-                <div class="btn-group mt-3 w-100">
-                    <!-- <a href="#" class="btn btn-secondary">Register</a>
-                                <a href="#" class="btn btn-link">Forgot Password?</a> -->
-                    <!-- <span>Already Registered</span> -->
-
-                    <span class="h4">Already Registered <button class="btn btn-success mx-3">Login</button></span>
-                    <button class="btn btn-secondary mx-3">Forgot Password</button>
-                </div>
+            <div class="col">
+                <input type="text" class="form-control" id="last_name" name="last_name" placeholder="Last Name">
             </div>
         </div>
-    </main>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-        crossorigin="anonymous"></script>
-</body>
 
-</html>
+        <div class="row w-100 mt-2">
+            <div class="col-6">
+                <input type="email" class="form-control w-100" id="email" name="email" placeholder="Email Address">
+            </div>
+            <div class="col-6">
+                <select name="category" class="form-control" id="category" name="category">
+                    <option value="GEN">GEN</option>
+                    <option value="EWS">EWS</option>
+                    <option value="OBC">OBC</option>
+                    <option value="SC">SC</option>
+                    <option value="ST">ST</option>
+                    <option value="PWD">PWD</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="row w-100 m-2">
+            <div class="col">
+                <input type="password" class="form-control" id="password" name="password" placeholder="Password">
+            </div>
+            <div class="col">
+                <input type="password" class="form-control" id="password2" name="password2" placeholder="Re-type Password">
+            </div>
+        </div>
+        <p class="my-3">
+            <strong>Note:</strong><br>
+            1. Applicant should kindly check their email for activation link to access the portal.<br>
+            2. Please check SPAM folder also, in case activation link is not received in INBOX.<br>
+            3. Applicant applying for more than one position/ department should use different email id for
+            each
+            application.
+        </p>
+
+        <button type="submit" class="btn btn-primary btn-block my-2 px-3">Register</button>
+    </form>
+    <div class="btn-group mt-3 w-100">
+        <!-- <a href="#" class="btn btn-secondary">Register</a>
+                    <a href="#" class="btn btn-link">Forgot Password?</a> -->
+        <!-- <span>Already Registered</span> -->
+
+        <span class="h4">Already Registered <button class="btn btn-success mx-3">Login</button></span>
+        <button class="btn btn-secondary mx-3">Forgot Password</button>
+    </div>
+</div>
+{% endblock content %}

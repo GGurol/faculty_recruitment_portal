@@ -1,0 +1,41 @@
+{% extends "base_login.html" %}
+{% block title %}Faculty Forgot Password{% endblock title %}
+{% block content %}
+<div class="formPlace">
+  <h1 class="mb-4">LOGIN HERE</h1>
+  <form action="" class="formPage" method="POST">
+    {% csrf_token %}
+    <div class="form-group">
+      <input
+        type="text"
+        class="form-control"
+        id="email"
+        name="email"
+        placeholder="Email address"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <input
+        type="password"
+        class="form-control"
+        id="password"
+        name="password"
+        placeholder="Password"
+        required
+      />
+    </div>
+    <button type="submit" class="btn btn-primary btn-block my-2 w-25">
+      Login
+    </button>
+  </form>
+  <div class="btn-group mt-3 w-75">
+    <!-- <a href="#" class="btn btn-secondary">Register</a>
+            <a href="#" class="btn btn-link">Forgot Password?</a> -->
+    <!-- <span>Already Registered</span> -->
+
+    <button class="btn btn-success mx-3">Register</button>
+    <button class="btn btn-secondary mx-3">Forgot Password</button>
+  </div>
+</div>
+{% endblock content %}
