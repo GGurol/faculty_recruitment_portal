@@ -1,0 +1,57 @@
+{% extends "base_login.html" %}
+{% block title %}Faculty Register{% endblock title %}
+{% block content %}
+<div class="formPlace">
+    <h1 class="mb-4">REGISTER HERE</h1>
+    <form action="{% url 'register' %}" method="POST" class="formPage w-100">
+        {% csrf_token %}
+        {{ form.non_field_errors }}
+        <div class="row w-100">
+            <div class="col">
+                {{ form.first_name.errors }}
+                {{ form.first_name }}
+            </div>
+            <div class="col">
+                {{ form.last_name.errors }}
+                {{ form.last_name }}
+            </div>
+        </div>
+
+        <div class="row w-100 mt-2">
+            <div class="col-6">
+                {{ form.email.errors }}
+                {{ form.email }}
+            </div>
+            <div class="col-6">
+                {{ form.category.errors }}
+                {{ form.category }}
+            </div>
+        </div>
+
+        <div class="row w-100 m-2">
+            <div class="col-6">
+                {{ form.password.errors }}
+                {{ form.password }}
+            </div>
+            <div class="col-6">
+                {{ form.password2.errors }}
+                {{ form.password2 }}
+            </div>
+        </div>
+        <p class="my-3">
+            <strong>Note:</strong><br>
+            1. Applicant should kindly check their email for activation link to access the portal.<br>
+            2. Please check SPAM folder also, in case activation link is not received in INBOX.<br>
+            3. Applicant applying for more than one position/ department should use different email id for each application.
+        </p>
+
+        <button type="submit" class="btn btn-primary btn-block my-2 px-3">Register</button>
+    </form>
+    <div class="btn-group mt-3 w-100">
+        <span class="h4">Already Registered <a href="{% url 'user_login' %}" class="btn btn-success mx-3">Login</a></span>
+        <a href="#" class="btn btn-secondary mx-3">Forgot Password</a>
+    </div>
+</div>
+{% endblock content %}
+
+

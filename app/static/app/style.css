@@ -108,6 +108,7 @@ form label {
 
 form input[type="text"],
 form input[type="date"],
+form input[type="password"],
 form input[type="number"],
 form input[type="tel"],
 form input[type="email"],
@@ -203,6 +204,7 @@ td {
   form input[type="number"],
   form input[type="tel"],
   form input[type="email"],
+  form input[type="password"],
   form select,
   form input[type="file"] {
     width: calc(50% - 20px);
@@ -229,6 +231,7 @@ td {
   form input[type="tel"],
   form input[type="file"],
   form input[type="email"],
+  form input[type="password"],
   form select {
     width: 90%; /* Set input width to 100% for medium and large devices */
   }
