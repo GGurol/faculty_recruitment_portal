@@ -4,235 +4,262 @@
 <div class="box">
     <div class="row mt-4 mx-2 ">
         <div class="col-6">
-            <h3>Welcome {{User.first_name}} {{User.last_name}}</h3>
+            <h3>Welcome {{ request.user.first_name }} {{ request.user.last_name }}</h3>
         </div>
-        <div class="col-5">
+        <div class="col-4">
             <h3>Application Number : 12345678</h3>
         </div>
-        <div class="col-1">
-            <a href="{% url 'logout' %}" class="btn btn-success mx-3">Logout</a>
+        <div class="col-2">
+            <a href="{% url 'logout' %}" class="btn btn-success mx-3 ">Logout</a>
         </div>
     </div>
     <hr>
-    <form action="" method="post">
-        <!-- First Section: Application Details -->
+    <form action="{% url 'page1' %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <!-- Application Details -->
         <section>
-            <h4>Application Details</h4>
+            <h4>Application Details</h4>    
             <div class="row">
                 <div class="col">
                     <label for="advertisementNumber">Advertisement Number:</label><br>
-                    <select id="advertisementNumber" name="advertisementNumber">
-                        <option value="1">Advertisement 1</option>
-                        <option value="2">Advertisement 2</option>
-                        <option value="3">Advertisement 3</option>
-                    </select>
+                    {{ page1_form.advertisement_number.errors }}
+                    {{ page1_form.advertisement_number }}
                 </div>
                 <div class="col">
-                    <label for="postApplied">Post Applied For:</label><br>
-                    <select id="postApplied" name="postApplied">
-                        <option value="Professor">Professor</option>
-                        <option value="Associate Professor">Associate Professor</option>
-                        <option value="Assistant Professor">Assistant Professor</option>
-                    </select>
+                    <label for="postAppliedFor">Post Applied For:</label><br>
+                    {{ page1_form.post_applied_for.errors }}
+                    {{ page1_form.post_applied_for }}
                 </div>
             </div>
 
             <div class="row">
                 <div class="col">
                     <label for="dateOfApplication">Date of Application:</label><br>
-                    <input type="date" id="dateOfApplication" name="dateOfApplication" value="2024-04-01"
-                        readonly>
+                    {{ page1_form.date_of_application.errors }}
+                    {{ page1_form.date_of_application }}
                 </div>
                 <div class="col">
                     <label for="applicationNumber">Application Number:</label><br>
-                    <input type="text" id="applicationNumber" name="applicationNumber" value="123456" readonly>
+                    {{ page1_form.application_number.errors }}
+                    {{ page1_form.application_number }}
                 </div>
             </div>
 
             <div class="row">
                 <div class="col-6">
                     <label for="department">Department:</label><br>
-                    <select id="department" name="department">
-                        <option value="Computer Science">Computer Science</option>
-                        <option value="Electrical Engineering">Electrical Engineering</option>
-                        <option value="Mechanical Engineering">Mechanical Engineering</option>
-                    </select>
+                    {{ page1_form.department.errors }}
+                    {{ page1_form.department }}
                 </div>
             </div>
         </section>
         <hr>
 
-        <!-- Second Section: Personal Details -->
+        <!-- Personal Details -->
         <section>
-            <h4> 1. Personal Details</h4>
-
+            <h4>Personal Details</h4>
             <div class="row">
-                <div class="col-4">
-                    <label for="photoUpload" class="w-75">Upload Photo of Applicant:</label>
-                </div>
-                <div class="col-8">
-                    <input type="file" id="photoUpload" name="photoUpload" accept="image/*">
+                <div class="col">
+                    <label for="photo">Upload Photo of Applicant:</label><br>
+                    {{ page1_form.photo.errors }}
+                    {{ page1_form.photo }}
                 </div>
             </div>
 
             <div class="row">
                 <div class="col">
-                    <label for="firstName">First Name:</label>
-                    <input type="text" id="firstName" name="firstName" required>
+                    <label for="firstName">First Name:</label><br>
+                    {{ page1_form.first_name.errors }}
+                    {{ page1_form.first_name }}
                 </div>
                 <div class="col">
-                    <label for="middleName">Middle Name:</label>
-                    <input type="text" id="middleName" name="middleName">
+                    <label for="middleName">Middle Name:</label><br>
+                    {{ page1_form.middle_name.errors }}
+                    {{ page1_form.middle_name }}
                 </div>
             </div>
 
             <div class="row">
                 <div class="col">
-                    <label for="lastName">Last Name:</label>
-                    <input type="text" id="lastName" name="lastName" required>
+                    <label for="lastName">Last Name:</label><br>
+                    {{ page1_form.last_name.errors }}
+                    {{ page1_form.last_name }}
                 </div>
                 <div class="col">
-                    <label for="dob">DOB:</label>
-                    <input type="date" id="dob" name="dob" required>
+                    <label for="dob">DOB:</label><br>
+                    {{ page1_form.dob.errors }}
+                    {{ page1_form.dob }}
                 </div>
             </div>
 
             <div class="row">
                 <div class="col">
-                    <label for="nationality">Nationality:</label>
-                    <select id="nationality" name="nationality">
-                        <option value="Indian" selected>Indian</option>
-                        <option value="Other">Other</option>
-                    </select>
+                    <label for="nationality">Nationality:</label><br>
+                    {{ page1_form.nationality.errors }}
+                    {{ page1_form.nationality }}
                 </div>
                 <div class="col">
-                    <label for="category">Category:</label>
-                    <select id="category" name="category">
-                        <option value="General">General</option>
-                        <option value="OBC">OBC</option>
-                        <option value="SC">SC</option>
-                        <option value="ST">ST</option>
-                    </select>
+                    <label for="category">Category:</label><br>
+                    {{ page1_form.category.errors }}
+                    {{ page1_form.category }}
                 </div>
             </div>
 
             <div class="row">
                 <div class="col">
-                    <label for="gender">Gender:</label>
-                    <select id="gender" name="gender">
-                        <option value="Male">Male</option>
-                        <option value="Female">Female</option>
-                        <option value="Other">Other</option>
-                    </select>
+                    <label for="gender">Gender:</label><br>
+                    {{ page1_form.gender.errors }}
+                    {{ page1_form.gender }}
                 </div>
                 <div class="col">
-                    <label for="maritalStatus">Marital Status:</label>
-                    <select id="maritalStatus" name="maritalStatus">
-                        <option value="Single">Single</option>
-                        <option value="Married">Married</option>
-                    </select>
+                    <label for="maritalStatus">Marital Status:</label><br>
+                    {{ page1_form.marital_status.errors }}
+                    {{ page1_form.marital_status }}
                 </div>
             </div>
 
             <div class="row">
                 <div class="col">
-                    <label for="fatherName">Father's Full Name:</label>
-                    <input type="text" id="fatherName" name="fatherName" required>
+                    <label for="fatherName">Father's Full Name:</label><br>
+                    {{ page1_form.father_name.errors }}
+                    {{ page1_form.father_name }}
                 </div>
                 <div class="col">
-                    <label for="motherName">Mother's Full Name:</label>
-                    <input type="text" id="motherName" name="motherName" required>
+                    <label for="motherName">Mother's Full Name:</label><br>
+                    {{ page1_form.mother_name.errors }}
+                    {{ page1_form.mother_name }}
                 </div>
             </div>
 
             <div class="row">
                 <div class="col">
-                    <label for="idProofType">ID Proof Type:</label>
-                    <select id="idProofType" name="idProofType">
-                        <option value="Aadhaar">Aadhaar</option>
-                        <option value="Passport">Passport</option>
-                        <option value="Driving License">Driving License</option>
-                        <option value="PAN Card">PAN Card</option>
-                        <option value="Ration Card">Ration Card</option>
-                        <option value="Voter ID">Voter ID</option>
-                    </select>
+                    <label for="idProofType">ID Proof Type:</label><br>
+                    {{ page1_form.id_proof_type.errors }}
+                    {{ page1_form.id_proof_type }}
                 </div>
                 <div class="col">
-                    <label for="idProofUpload" class="w-75">Upload ID Proof (pdf, max 300kB):</label>
-                    <input type="file" id="idProofUpload" name="idProofUpload" accept=".pdf">
-                </div>
-            </div><br>
-
-            <div class="row">
-                <div class="col">
-                    <fieldset>
-                        <legend>Correspondence Address</legend>
-                        <label for="streetCorrespondence">Street:</label>
-                        <input type="text" id="streetCorrespondence" name="streetCorrespondence">
-                        <label for="cityCorrespondence">City:</label>
-                        <input type="text" id="cityCorrespondence" name="cityCorrespondence">
-                        <label for="districtCorrespondence">District:</label>
-                        <input type="text" id="districtCorrespondence" name="districtCorrespondence"><br>
-                        <label for="stateCorrespondence">State:</label>
-                        <input type="text" id="stateCorrespondence" name="stateCorrespondence">
-                        <label for="countryCorrespondence">Country:</label>
-                        <input type="text" id="countryCorrespondence" name="countryCorrespondence">
-                        <label for="pinCorrespondence">Pin/Zip:</label>
-                        <input type="text" id="pinCorrespondence" name="pinCorrespondence">
-                    </fieldset>
-                </div>
-                <div class="col">
-                    <fieldset>
-                        <legend>Permanent Address</legend>
-                        <label for="streetPermanent">Street:</label>
-                        <input type="text" id="streetPermanent" name="streetPermanent">
-                        <label for="cityPermanent">City:</label>
-                        <input type="text" id="cityPermanent" name="cityPermanent">
-                        <label for="districtPermanent">District:</label>
-                        <input type="text" id="districtPermanent" name="districtPermanent"><br>
-                        <label for="statePermanent">State:</label>
-                        <input type="text" id="statePermanent" name="statePermanent">
-                        <label for="countryPermanent">Country:</label>
-                        <input type="text" id="countryPermanent" name="countryPermanent">
-                        <label for="pinPermanent">Pin/Zip:</label>
-                        <input type="text" id="pinPermanent" name="pinPermanent">
-                    </fieldset>
+                    <label for="idProofUpload">Upload ID Proof (pdf, max 300kB):</label><br>
+                    {{ page1_form.id_proof_upload.errors }}
+                    {{ page1_form.id_proof_upload }}
                 </div>
             </div>
+        </section>
+        <hr>
 
-            <fieldset>
-                <legend>Contact Details</legend>
-
-                <div class="row">
-                    <div class="col">
-                        <label for="mobileNumber">Mobile Number:</label>
-                        <input type="tel" id="mobileNumber" name="mobileNumber" required>
-                    </div>
-                    <div class="col">
-                        <label for="alternateMobile">Alternate Mobile Number:</label>
-                        <input type="tel" id="alternateMobile" name="alternateMobile">
-                    </div>
+        <!-- Correspondence Address -->
+        <section>
+            <h4>Correspondence Address</h4>
+            <div class="row">
+                <div class="col">
+                    <label for="streetCorrespondence">Street:</label><br>
+                    {{ page1_form.street_correspondence.errors }}
+                    {{ page1_form.street_correspondence }}
                 </div>
-
-                <div class="row">
-                    <div class="col">
-                        <label for="email">Email ID:</label>
-                        <input type="email" id="email" name="email" placeholder="registeredemail" readonly>
-                    </div>
-                    <div class="col">
-                        <label for="alternateEmail">Alternate Email ID:</label>
-                        <input type="email" id="alternateEmail" name="alternateEmail">
-                    </div>
+                <div class="col">
+                    <label for="cityCorrespondence">City:</label><br>
+                    {{ page1_form.city_correspondence.errors }}
+                    {{ page1_form.city_correspondence }}
                 </div>
-
-                <div class="row">
-                    <div class="col-6">
-                        <label for="landline">Landline Number:</label>
-                        <input type="tel" id="landline" name="landline">
-                    </div>
+                <div class="col">
+                    <label for="districtCorrespondence">District:</label><br>
+                    {{ page1_form.district_correspondence.errors }}
+                    {{ page1_form.district_correspondence }}
                 </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <label for="stateCorrespondence">State:</label><br>
+                    {{ page1_form.state_correspondence.errors }}
+                    {{ page1_form.state_correspondence }}
+                </div>
+                <div class="col">
+                    <label for="countryCorrespondence">Country:</label><br>
+                    {{ page1_form.country_correspondence.errors }}
+                    {{ page1_form.country_correspondence }}
+                </div>
+                <div class="col">
+                    <label for="pinCorrespondence">Pin/Zip:</label><br>
+                    {{ page1_form.pin_correspondence.errors }}
+                    {{ page1_form.pin_correspondence }}
+                </div>
+            </div>
+        </section>
+        <hr>
 
-            </fieldset>
+        <!-- Permanent Address -->
+        <section>
+            <h4>Permanent Address</h4>
+            <div class="row">
+                <div class="col">
+                    <label for="streetPermanent">Street:</label><br>
+                    {{ page1_form.street_permanent.errors }}
+                    {{ page1_form.street_permanent }}
+                </div>
+                <div class="col">
+                    <label for="cityPermanent">City:</label><br>
+                    {{ page1_form.city_permanent.errors }}
+                    {{ page1_form.city_permanent }}
+                </div>
+                <div class="col">
+                    <label for="districtPermanent">District:</label><br>
+                    {{ page1_form.district_permanent.errors }}
+                    {{ page1_form.district_permanent }}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <label for="statePermanent">State:</label><br>
+                    {{ page1_form.state_permanent.errors }}
+                    {{ page1_form.state_permanent }}
+                </div>
+                <div class="col">
+                    <label for="countryPermanent">Country:</label><br>
+                    {{ page1_form.country_permanent.errors }}
+                    {{ page1_form.country_permanent }}
+                </div>
+                <div class="col">
+                    <label for="pinPermanent">Pin/Zip:</label><br>
+                    {{ page1_form.pin_permanent.errors }}
+                    {{ page1_form.pin_permanent }}
+                </div>
+            </div>
+        </section>
+        <hr>
+
+        <!-- Contact Details -->
+        <section>
+            <h4>Contact Details</h4>
+            <div class="row">
+                <div class="col">
+                    <label for="mobileNumber">Mobile Number:</label><br>
+                    {{ page1_form.mobile_number.errors }}
+                    {{ page1_form.mobile_number }}
+                </div>
+                <div class="col">
+                    <label for="alternateMobile">Alternate Mobile Number:</label><br>
+                    {{ page1_form.alternate_mobile.errors }}
+                    {{ page1_form.alternate_mobile }}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <label for="email">Email ID:</label><br>
+                    {{ page1_form.email.errors }}
+                    {{ page1_form.email }}
+                </div>
+                <div class="col">
+                    <label for="alternateEmail">Alternate Email ID:</label><br>
+                    {{ page1_form.alternate_email.errors }}
+                    {{ page1_form.alternate_email }}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6">
+                    <label for="landline">Landline Number:</label><br>
+                    {{ page1_form.landline.errors }}
+                    {{ page1_form.landline }}
+                </div>
+            </div>
         </section>
 
         <!-- Save and Next button -->

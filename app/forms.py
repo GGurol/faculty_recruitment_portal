@@ -1,5 +1,6 @@
 from django import forms
 from django.core.exceptions import ValidationError
+#
 from .models import UserRegistration
 
 class UserRegistrationForm(forms.ModelForm):
@@ -28,3 +29,12 @@ class UserRegistrationForm(forms.ModelForm):
 class LoginForm(forms.Form):
     email = forms.EmailField(widget=forms.EmailInput(attrs={'placeholder': 'Email Address'}))
     password = forms.CharField(widget=forms.PasswordInput(attrs={'placeholder': 'Password'}))
+
+
+#
+from .models import PageModel1
+
+class PageForm1(forms.ModelForm):
+    class Meta:
+        model = PageModel1
+        exclude= ['user']
