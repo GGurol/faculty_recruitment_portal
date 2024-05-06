@@ -3,6 +3,3 @@ By
 Animesh Tripathy 2201CS16
 AND
 Aman Vaibhav Jha 2201AI54
-
-Admin
-user , 123
