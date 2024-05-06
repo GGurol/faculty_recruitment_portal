@@ -38,3 +38,8 @@ class PageForm1(forms.ModelForm):
     class Meta:
         model = PageModel1
         exclude= ['user']
+        widgets = {
+            'date_of_application': forms.DateInput(attrs={'type': 'date'}),
+            'dob': forms.DateInput(attrs={'type': 'date'}),
+            # Add more fields as needed
+        }

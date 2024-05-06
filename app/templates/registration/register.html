@@ -48,8 +48,8 @@
         <button type="submit" class="btn btn-primary btn-block my-2 px-3">Register</button>
     </form>
     <div class="btn-group mt-3 w-100">
-        <span class="h4">Already Registered <a href="{% url 'user_login' %}" class="btn btn-success mx-3">Login</a></span>
-        <a href="#" class="btn btn-secondary mx-3">Forgot Password</a>
+        <a href="{% url 'user_login' %}" class="btn btn-success mx-3">Login</a>
+        <a href="{% url 'reset_password' %}" class="btn btn-secondary mx-3">Forgot Password</a>
     </div>
 </div>
 {% endblock content %}

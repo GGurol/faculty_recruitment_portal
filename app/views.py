@@ -6,7 +6,7 @@ from django.contrib import messages
 from django.contrib.auth import authenticate, login as auth_login, logout
 from django.contrib.auth.models import User
 from .forms import UserRegistrationForm, LoginForm
-from django.contrib.auth.decorators import login_required 
+# from django.contrib.auth.decorators import login_required 
 
 
 def register(request):
@@ -50,27 +50,6 @@ def logout_view(request):
 from .forms import PageForm1
 from .models import PageModel1
 
-# @login_required
-# def page1(request):
-#     user = request.user
-#     try:
-#         application_data = PageModel1.objects.get(user=user)
-#         page1_form = PageForm1(instance=application_data)
-#     except PageModel1.DoesNotExist:
-#         page1_form = PageForm1()
-
-#     if request.method == 'POST':
-#         if PageModel1.objects.filter(user=user).exists():
-#             page1_form = PageForm1(request.POST, request.FILES, instance=application_data)
-#         else:
-#             page1_form = PageForm1(request.POST, request.FILES)
-        
-#         if page1_form.is_valid():
-#             page1_form.instance.user = user
-#             page1_form.save()
-#             return redirect('page2')
-
-#     return render(request, 'app/page1.html', {'page1_form': page1_form})
 def page1(request):
     user = request.user
     try:

@@ -30,7 +30,7 @@ class PageModel1(models.Model):
     nationality = models.CharField(max_length=100)
     category = models.CharField(max_length=10, choices=[('GEN', 'GEN'), ('EWS', 'EWS'), ('OBC', 'OBC'), ('SC', 'SC'), ('ST', 'ST'), ('PWD', 'PWD')])
     gender = models.CharField(max_length=20)
-    marital_status = models.CharField(max_length=20)
+    marital_status = models.CharField(max_length=20,choices=[('Married', 'Married'), ('Single', 'Single')])
     father_name = models.CharField(max_length=100)
     mother_name = models.CharField(max_length=100)
     id_proof_type = models.CharField(max_length=100)
@@ -58,3 +58,4 @@ class PageModel1(models.Model):
     email = models.EmailField()
     alternate_email = models.EmailField(blank=True, null=True)
     landline = models.CharField(max_length=15, blank=True, null=True)
+

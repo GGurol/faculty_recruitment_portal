@@ -1,5 +1,5 @@
 {% extends "base_form.html" %}
-{% block title %}Page1{% endblock title %}
+{% block title %}Page2{% endblock title %}
 {% block content %}
 <div class="box">
     <div class="row mt-4 mx-2 ">
@@ -168,6 +168,7 @@
                     <table class="table">
                         <!-- Table format form for School details -->
                         <tr>
+                            <th>S. No.</th>
                             <th>10th/12th/HSC/Diploma</th>
                             <th>School</th>
                             <th>Year of Passing</th>
@@ -175,6 +176,7 @@
                             <th>Division/Class</th>
                         </tr>
                         <tr>
+                            <td>1</td>
                             <td><input type="text" id="college_class" name="college_class"
                                     value="12th/HSC/Diploma" readonly></td>
                             <td><input type="text" id="college_name" name="college_name"></td>
@@ -183,6 +185,7 @@
                             <td><input type="text" id="college_division" name="college_division"></td>
                         </tr>
                         <tr>
+                            <td>2</td>
                             <td><input type="text" id="school_class" name="school_class" value="10th" readonly>
                             </td>
                             <td><input type="text" id="school_name" name="school_name"></td>
@@ -198,9 +201,11 @@
             <!-- Subsection E: Additional Educational Qualification -->
             <fieldset>
                 <legend> (E) Additional Educational Qualification (If any)</legend>
+                
                 <div class="table-responsive">
                     <table class="table">
                         <tr>
+                            <th>S. No.</th>
                             <th>Degree/Certificate</th>
                             <th>University/Institute</th>
                             <th>Branch/Stream</th>
@@ -211,20 +216,69 @@
                             <th>Division/Class</th>
                         </tr>
                         <tr>
-                            <td><input type="text" id="qualification_degree" name="qualification_degree"></td>
-                            <td><input type="text" id="qualification_institute" name="qualification_institute">
-                            </td>
-                            <td><input type="text" id="qualification_branch" name="qualification_branch"></td>
-                            <td><input type="date" id="qualification_year_of_joining"
-                                    name="cqualification_year_of_joining"></td>
-                            <td><input type="date" id="qualification_year_of_completion"
-                                    name="qualification_year_of_completion"></td>
-                            <td><input type="number" id="qualification_duration" name="qualification_duration">
-                            </td>
-                            <td><input type="text" id="qualification_percentage"
-                                    name="qualification_percentage"></td>
-                            <td><input type="text" id="qualification_division" name="qualification_division">
-                            </td>
+                            <td>1</td>
+                            <td><input type="text" id="qualification_degree_0" name="qualification_degree_0"></td>
+                            <td><input type="text" id="qualification_institute_0" name="qualification_institute_0"></td>
+                            <td><input type="text" id="qualification_branch_0" name="qualification_branch_0"></td>
+                            <td><input type="date" id="qualification_year_of_joining_0"
+                                    name="qualification_year_of_joining_0"></td>
+                            <td><input type="date" id="qualification_year_of_completion_0"
+                                    name="qualification_year_of_completion_0"></td>
+                            <td><input type="number" id="qualification_duration_0" name="qualification_duration_0"></td>
+                            <td><input type="text" id="qualification_percentage_0" name="qualification_percentage_0"></td>
+                            <td><input type="text" id="qualification_division_0" name="qualification_division_0"></td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td><input type="text" id="qualification_degree_1" name="qualification_degree_1"></td>
+                            <td><input type="text" id="qualification_institute_1" name="qualification_institute_1"></td>
+                            <td><input type="text" id="qualification_branch_1" name="qualification_branch_1"></td>
+                            <td><input type="date" id="qualification_year_of_joining_1"
+                                    name="cqualification_year_of_joining_1"></td>
+                            <td><input type="date" id="qualification_year_of_completion_1"
+                                    name="qualification_year_of_completion_1"></td>
+                            <td><input type="number" id="qualification_duration_1" name="qualification_duration_1"></td>
+                            <td><input type="text" id="qualification_percentage_1" name="qualification_percentage_1"></td>
+                            <td><input type="text" id="qualification_division_1" name="qualification_division_1"></td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td><input type="text" id="qualification_degree_2" name="qualification_degree_2"></td>
+                            <td><input type="text" id="qualification_institute_2" name="qualification_institute_2"></td>
+                            <td><input type="text" id="qualification_branch_2" name="qualification_branch_2"></td>
+                            <td><input type="date" id="qualification_year_of_joining_2"
+                                    name="cqualification_year_of_joining_2"></td>
+                            <td><input type="date" id="qualification_year_of_completion_2"
+                                    name="qualification_year_of_completion_2"></td>
+                            <td><input type="number" id="qualification_duration_2" name="qualification_duration_2"></td>
+                            <td><input type="text" id="qualification_percentage_2" name="qualification_percentage_2"></td>
+                            <td><input type="text" id="qualification_division_2" name="qualification_division_2"></td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td><input type="text" id="qualification_degree_3" name="qualification_degree_3"></td>
+                            <td><input type="text" id="qualification_institute_3" name="qualification_institute_3"></td>
+                            <td><input type="text" id="qualification_branch_3" name="qualification_branch_3"></td>
+                            <td><input type="date" id="qualification_year_of_joining_3"
+                                    name="cqualification_year_of_joining_3"></td>
+                            <td><input type="date" id="qualification_year_of_completion_3"
+                                    name="qualification_year_of_completion_3"></td>
+                            <td><input type="number" id="qualification_duration_3" name="qualification_duration_3"></td>
+                            <td><input type="text" id="qualification_percentage_3" name="qualification_percentage_3"></td>
+                            <td><input type="text" id="qualification_division_3" name="qualification_division_3"></td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td><input type="text" id="qualification_degree_4" name="qualification_degree_4"></td>
+                            <td><input type="text" id="qualification_institute_4" name="qualification_institute_4"></td>
+                            <td><input type="text" id="qualification_branch_4" name="qualification_branch_4"></td>
+                            <td><input type="date" id="qualification_year_of_joining_4"
+                                    name="cqualification_year_of_joining_4"></td>
+                            <td><input type="date" id="qualification_year_of_completion_4"
+                                    name="qualification_year_of_completion_4"></td>
+                            <td><input type="number" id="qualification_duration_4" name="qualification_duration_4"></td>
+                            <td><input type="text" id="qualification_percentage_4" name="qualification_percentage_4"></td>
+                            <td><input type="text" id="qualification_division_4" name="qualification_division_4"></td>
                         </tr>
                     </table>
                 </div>
@@ -233,11 +287,9 @@
         </section>
         <!-- Save and Next button -->
         <div class="btn-container">
+            <a href="{% url 'page1' %}" class="btn btn-success mx-3">Previous Page</a>
             <button type="submit" id="nextButton">Save And Next</button>
         </div>
     </form>
-    <div class="btn-container">
-        <a href="{% url 'page1' %}" class="btn btn-success mx-3">Previous Page</a>
-    </div>
 </div>
 {% endblock content %}

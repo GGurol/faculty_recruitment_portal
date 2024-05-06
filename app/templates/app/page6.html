@@ -1,5 +1,5 @@
 {% extends "base_form.html" %}
-{% block title %}Page1{% endblock title %}
+{% block title %}Page6{% endblock title %}
 {% block content %}
 <div class="box">
     <div class="row mt-4 mx-2 ">
@@ -10,7 +10,7 @@
             <h3>Application Number : 12345678</h3>
         </div>
         <div class="col-1">
-            <button type="button" class="btn btn-warning">Logout</button>
+            <a href="{% url 'logout' %}" class="btn btn-success mx-3">Logout</a>
         </div>
     </div>
     <hr>
@@ -21,6 +21,7 @@
         <section>
             <h4>13. Research Supervision</h4>
 
+            <!-- Fieldset for (A) PhD Thesis Supervision -->
             <fieldset>
                 <legend>(A) PhD Thesis Supervision</legend>
                 <div class="table-responsive">
@@ -33,29 +34,73 @@
                             <th>Status</th>
                             <th>Ongoing Since/Date of Completion</th>
                         </tr>
+                        <!-- Row 1 -->
                         <tr>
                             <td>1</td>
-                            <td><input type="text" id="phd_name" name="phd_name"></td>
-                            <td><input type="text" id="phd_title" name="phd_title"></td>
-                            <td><select id="phd_role" name="phd_role">
-                                    <option value="Supervisor with no Co-Supervisor">Supervisor with no
-                                        Co-Supervisor</option>
-                                    <option value="Supervisor with Co-Supervisor">Supervisor with Co-Supervisor
-                                    </option>
+                            <td><input type="text" id="phd_name_1" name="phd_name_1"></td>
+                            <td><input type="text" id="phd_title_1" name="phd_title_1"></td>
+                            <td>
+                                <select id="phd_role_1" name="phd_role_1">
+                                    <option value="Supervisor with no Co-Supervisor">Supervisor with no Co-Supervisor</option>
+                                    <option value="Supervisor with Co-Supervisor">Supervisor with Co-Supervisor</option>
                                     <option value="Co-Supervisor">Co-Supervisor</option>
-                                </select></td>
-                            <td><select id="phd_status" name="phd_status">
+                                </select>
+                            </td>
+                            <td>
+                                <select id="phd_status_1" name="phd_status_1">
                                     <option value="Ongoing">Ongoing</option>
                                     <option value="Completed">Completed</option>
-                                </select></td>
-                            <td><input type="text" id="phd_date" name="phd_date"></td>
+                                </select>
+                            </td>
+                            <td><input type="date" id="phd_date_1" name="phd_date_1"></td>
+                        </tr>
+                        <!-- Row 2 -->
+                        <tr>
+                            <td>2</td>
+                            <td><input type="text" id="phd_name_2" name="phd_name_2"></td>
+                            <td><input type="text" id="phd_title_2" name="phd_title_2"></td>
+                            <td>
+                                <select id="phd_role_2" name="phd_role_2">
+                                    <option value="Supervisor with no Co-Supervisor">Supervisor with no Co-Supervisor</option>
+                                    <option value="Supervisor with Co-Supervisor">Supervisor with Co-Supervisor</option>
+                                    <option value="Co-Supervisor">Co-Supervisor</option>
+                                </select>
+                            </td>
+                            <td>
+                                <select id="phd_status_2" name="phd_status_2">
+                                    <option value="Ongoing">Ongoing</option>
+                                    <option value="Completed">Completed</option>
+                                </select>
+                            </td>
+                            <td><input type="date" id="phd_date_2" name="phd_date_2"></td>
+                        </tr>
+                        <!-- Row 3 -->
+                        <tr>
+                            <td>3</td>
+                            <td><input type="text" id="phd_name_3" name="phd_name_3"></td>
+                            <td><input type="text" id="phd_title_3" name="phd_title_3"></td>
+                            <td>
+                                <select id="phd_role_3" name="phd_role_3">
+                                    <option value="Supervisor with no Co-Supervisor">Supervisor with no Co-Supervisor</option>
+                                    <option value="Supervisor with Co-Supervisor">Supervisor with Co-Supervisor</option>
+                                    <option value="Co-Supervisor">Co-Supervisor</option>
+                                </select>
+                            </td>
+                            <td>
+                                <select id="phd_status_3" name="phd_status_3">
+                                    <option value="Ongoing">Ongoing</option>
+                                    <option value="Completed">Completed</option>
+                                </select>
+                            </td>
+                            <td><input type="date" id="phd_date_3" name="phd_date_3"></td>
                         </tr>
                     </table>
                 </div>
             </fieldset>
 
+            <!-- Fieldset for (B) M.Tech/M.E./Master's Degree -->
             <fieldset>
-                <legend>(B) PhD Thesis Supervision</legend>
+                <legend>(B) M.Tech/M.E./Master's Degree</legend>
                 <div class="table-responsive">
                     <table class="table">
                         <tr>
@@ -66,66 +111,153 @@
                             <th>Status</th>
                             <th>Ongoing Since/Date of Completion</th>
                         </tr>
+                        <!-- Row 1 -->
                         <tr>
                             <td>1</td>
-                            <td><input type="text" id="phd_name" name="phd_name"></td>
-                            <td><input type="text" id="phd_title" name="phd_title"></td>
-                            <td><select id="phd_role" name="phd_role">
-                                    <option value="Supervisor with no Co-Supervisor">Supervisor with no
-                                        Co-Supervisor</option>
-                                    <option value="Supervisor with Co-Supervisor">Supervisor with Co-Supervisor
-                                    </option>
+                            <td><input type="text" id="pg_name_1" name="pg_name_1"></td>
+                            <td><input type="text" id="pg_title_1" name="pg_title_1"></td>
+                            <td>
+                                <select id="pg_role_1" name="pg_role_1">
+                                    <option value="Supervisor with no Co-Supervisor">Supervisor with no Co-Supervisor</option>
+                                    <option value="Supervisor with Co-Supervisor">Supervisor with Co-Supervisor</option>
                                     <option value="Co-Supervisor">Co-Supervisor</option>
-                                </select></td>
-                            <td><select id="phd_status" name="phd_status">
+                                </select>
+                            </td>
+                            <td>
+                                <select id="pg_status_1" name="pg_status_1">
                                     <option value="Ongoing">Ongoing</option>
                                     <option value="Completed">Completed</option>
-                                </select></td>
-                            <td><input type="text" id="phd_date" name="phd_date"></td>
+                                </select>
+                            </td>
+                            <td><input type="date" id="pg_date_1" name="pg_date_1"></td>
+                        </tr>
+                        <!-- Row 2 -->
+                        <tr>
+                            <td>2</td>
+                            <td><input type="text" id="pg_name_2" name="pg_name_2"></td>
+                            <td><input type="text" id="pg_title_2" name="pg_title_2"></td>
+                            <td>
+                                <select id="pg_role_2" name="pg_role_2">
+                                    <option value="Supervisor with no Co-Supervisor">Supervisor with no Co-Supervisor</option>
+                                    <option value="Supervisor with Co-Supervisor">Supervisor with Co-Supervisor</option>
+                                    <option value="Co-Supervisor">Co-Supervisor</option>
+                                </select>
+                            </td>
+                            <td>
+                                <select id="pg_status_2" name="pg_status_2">
+                                    <option value="Ongoing">Ongoing</option>
+                                    <option value="Completed">Completed</option>
+                                </select>
+                            </td>
+                            <td><input type="date" id="pg_date_2" name="pg_date_2"></td>
+                        </tr>
+                        <!-- Row 3 -->
+                        <tr>
+                            <td>3</td>
+                            <td><input type="text" id="pg_name_3" name="pg_name_3"></td>
+                            <td><input type="text" id="pg_title_3" name="pg_title_3"></td>
+                            <td>
+                                <select id="pg_role_3" name="pg_role_3">
+                                    <option value="Supervisor with no Co-Supervisor">Supervisor with no Co-Supervisor</option>
+                                    <option value="Supervisor with Co-Supervisor">Supervisor with Co-Supervisor</option>
+                                    <option value="Co-Supervisor">Co-Supervisor</option>
+                                </select>
+                            </td>
+                            <td>
+                                <select id="pg_status_3" name="pg_status_3">
+                                    <option value="Ongoing">Ongoing</option>
+                                    <option value="Completed">Completed</option>
+                                </select>
+                            </td>
+                            <td><input type="date" id="pg_date_3" name="pg_date_3"></td>
                         </tr>
                     </table>
                 </div>
             </fieldset>
 
+            <!-- Fieldset for (C) B.Tech/B.E./Bachelor's Degree -->
             <fieldset>
-                <legend>(A) PhD Thesis Supervision</legend>
+                <legend>(C) B.Tech/B.E./Bachelor's Degree</legend>
                 <div class="table-responsive">
                     <table class="table">
                         <tr>
                             <th>S. No.</th>
                             <th>Name of Student/Research Scholar</th>
-                            <th>Title of Thesis</th>
+                            <th>Title of Project</th>
                             <th>Role</th>
                             <th>Status</th>
                             <th>Ongoing Since/Date of Completion</th>
                         </tr>
+                        <!-- Row 1 -->
                         <tr>
                             <td>1</td>
-                            <td><input type="text" id="phd_name" name="phd_name"></td>
-                            <td><input type="text" id="phd_title" name="phd_title"></td>
-                            <td><select id="phd_role" name="phd_role">
-                                    <option value="Supervisor with no Co-Supervisor">Supervisor with no
-                                        Co-Supervisor</option>
-                                    <option value="Supervisor with Co-Supervisor">Supervisor with Co-Supervisor
-                                    </option>
+                            <td><input type="text" id="ug_name_1" name="ug_name_1"></td>
+                            <td><input type="text" id="ug_title_1" name="ug_title_1"></td>
+                            <td>
+                                <select id="ug_role_1" name="ug_role_1">
+                                    <option value="Supervisor with no Co-Supervisor">Supervisor with no Co-Supervisor</option>
+                                    <option value="Supervisor with Co-Supervisor">Supervisor with Co-Supervisor</option>
                                     <option value="Co-Supervisor">Co-Supervisor</option>
-                                </select></td>
-                            <td><select id="phd_status" name="phd_status">
+                                </select>
+                            </td>
+                            <td>
+                                <select id="ug_status_1" name="ug_status_1">
                                     <option value="Ongoing">Ongoing</option>
                                     <option value="Completed">Completed</option>
-                                </select></td>
-                            <td><input type="text" id="phd_date" name="phd_date"></td>
+                                </select>
+                            </td>
+                            <td><input type="date" id="ug_date_1" name="ug_date_1"></td>
+                        </tr>
+                        <!-- Row 2 -->
+                        <tr>
+                            <td>2</td>
+                            <td><input type="text" id="ug_name_2" name="ug_name_2"></td>
+                            <td><input type="text" id="ug_title_2" name="ug_title_2"></td>
+                            <td>
+                                <select id="ug_role_2" name="ug_role_2">
+                                    <option value="Supervisor with no Co-Supervisor">Supervisor with no Co-Supervisor</option>
+                                    <option value="Supervisor with Co-Supervisor">Supervisor with Co-Supervisor</option>
+                                    <option value="Co-Supervisor">Co-Supervisor</option>
+                                </select>
+                            </td>
+                            <td>
+                                <select id="ug_status_2" name="ug_status_2">
+                                    <option value="Ongoing">Ongoing</option>
+                                    <option value="Completed">Completed</option>
+                                </select>
+                            </td>
+                            <td><input type="date" id="ug_date_2" name="ug_date_2"></td>
+                        </tr>
+                        <!-- Row 3 -->
+                        <tr>
+                            <td>3</td>
+                            <td><input type="text" id="ug_name_3" name="ug_name_3"></td>
+                            <td><input type="text" id="ug_title_3" name="ug_title_3"></td>
+                            <td>
+                                <select id="ug_role_3" name="ug_role_3">
+                                    <option value="Supervisor with no Co-Supervisor">Supervisor with no Co-Supervisor</option>
+                                    <option value="Supervisor with Co-Supervisor">Supervisor with Co-Supervisor</option>
+                                    <option value="Co-Supervisor">Co-Supervisor</option>
+                                </select>
+                            </td>
+                            <td>
+                                <select id="ug_status_3" name="ug_status_3">
+                                    <option value="Ongoing">Ongoing</option>
+                                    <option value="Completed">Completed</option>
+                                </select>
+                            </td>
+                            <td><input type="date" id="ug_date_3" name="ug_date_3"></td>
                         </tr>
                     </table>
                 </div>
             </fieldset>
-
+            
         </section>
 
 
         <!-- Save and Next button -->
         <div class="btn-container">
-            <button type="button" id="prevButton">Go to Previous Page</button>
+            <a href="{% url 'page5' %}" class="btn btn-success mx-3">Previous Page</a>
             <button type="submit" id="nextButton">Save And Next</button>
         </div>
     </form>
