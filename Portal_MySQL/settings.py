@@ -139,4 +139,4 @@ EMAIL_HOST = "smtp.gmail.com"
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = "aanimeshtripathy@gmail.com"
-EMAIL_HOST_PASSWORD = "utoe sunj qfvr nupg"
+EMAIL_HOST_PASSWORD = "my secret password"
