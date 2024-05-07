@@ -39,7 +39,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'app.apps.AppConfig',
-    'ckeditor',
 ]
 
 MIDDLEWARE = [
@@ -140,12 +139,5 @@ EMAIL_HOST = "smtp.gmail.com"
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = "aanimeshtripathy@gmail.com"
-EMAIL_HOST_PASSWORD = "My secret password"
+EMAIL_HOST_PASSWORD = "utoe sunj qfvr nupg"
 
-CKEDITOR_CONFIGS = {
-    'default': {
-        'toolbar': 'full',
-        'height': 300,
-        'width': 300,
-    },
-}
