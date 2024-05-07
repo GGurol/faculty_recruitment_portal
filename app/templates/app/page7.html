@@ -2,17 +2,62 @@
 {% block title %}Page7{% endblock title %}
 {% block content %}
 <div class="box">
-    <div class="row mt-4 mx-2 ">
+    <div class="row mt-4 mx-2">
         <div class="col-6">
             <h3>Welcome Animesh Tripathy</h3>
         </div>
         <div class="col-5">
-            <h3>Application Number : 12345678</h3>
+            <h3>Application Number: 12345678</h3>
         </div>
         <div class="col-1">
             <a href="{% url 'logout' %}" class="btn btn-success mx-3">Logout</a>
         </div>
     </div>
     <hr>
+    <form action="" method="POST">
+        {% csrf_token %}
+        <div class="row">
+            <div class="col-12">
+                <label for="research_plans">14. Significant research contribution and future plans</label><br>
+                <textarea class="form-control" id="research_plans" name="research_plans" placeholder="Detailed Research Statement describing your research plans" rows="5"></textarea>
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col-12">
+                <label for="teaching_plans">15. Significant teaching contribution and future plans</label><br>
+                <textarea class="form-control" id="teaching_plans" name="teaching_plans" placeholder="Detailed List of UG/PG courses that you would like to teach and your teaching plans" rows="5"></textarea>
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col-12">
+                <label for="other_details">16. Any other relevant information</label><br>
+                <textarea class="form-control" id="other_details" name="other_details" placeholder="Any other relevant information" rows="5"></textarea>
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col-12">
+                <label for="services_details">17. Professional Service: Editorship/Reviewership</label><br>
+                <textarea class="form-control" id="services_details" name="services_details" placeholder="Details about your Professional Service (Editorship/Reviewership)" rows="5"></textarea>
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col-12">
+                <label for="jour_details">18. Detailed List of Journal Publications</label><br>
+                <textarea class="form-control" id="jour_details" name="jour_details" placeholder="Detailed List of Journal Publications" rows="5"></textarea>
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col-12">
+                <label for="conference_details">19. Detailed List of Conference Publications</label><br>
+                <textarea class="form-control" id="conference_details" name="conference_details" placeholder="Detailed List of Conference Publications" rows="5"></textarea>
+            </div>
+        </div>
+
+        <!-- Save and Next button -->
+        <div class="btn-container">
+            <a href="{% url 'page6' %}" class="btn btn-success mx-3">Previous Page</a>
+            <button type="submit" id="nextButton">Save And Next</button>
+        </div>
+    </form>
 </div>
 {% endblock content %}
