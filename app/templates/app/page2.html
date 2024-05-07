@@ -2,7 +2,7 @@
 {% block title %}Page2{% endblock title %}
 {% block content %}
 <div class="box">
-    <div class="row mt-4 mx-2 ">
+    <div class="row mt-4 mx-2">
         <div class="col-6">
             <h3>Welcome Animesh Tripathy</h3>
         </div>
@@ -15,7 +15,9 @@
     </div>
     <hr>
     <form action="" method="post">
-        <!-- Educational Qualifications Section -->
+        {% csrf_token %}
+
+        <!-- Section 2: Educational Qualification -->
         <section>
             <h4>2. Educational Qualifications</h4>
 
@@ -201,11 +203,14 @@
             <!-- Subsection E: Additional Educational Qualification -->
             <fieldset>
                 <legend> (E) Additional Educational Qualification (If any)</legend>
-                
-                <div class="table-responsive">
-                    <table class="table">
+                <!-- Add button for Additional Educational Qualification -->
+            <button type="button" id="addRowBtn" class="btn btn-primary mb-3">Add Qualification</button>
+
+            <!-- Additional Educational Qualification table -->
+            <div class="table-responsive">
+                <table class="table" id="qualificationTable">
+                    <thead>
                         <tr>
-                            <th>S. No.</th>
                             <th>Degree/Certificate</th>
                             <th>University/Institute</th>
                             <th>Branch/Stream</th>
@@ -214,82 +219,58 @@
                             <th>Duration (in years)</th>
                             <th>Percentage/CGPA</th>
                             <th>Division/Class</th>
+                            <th>Action</th>
                         </tr>
-                        <tr>
-                            <td>1</td>
-                            <td><input type="text" id="qualification_degree_0" name="qualification_degree_0"></td>
-                            <td><input type="text" id="qualification_institute_0" name="qualification_institute_0"></td>
-                            <td><input type="text" id="qualification_branch_0" name="qualification_branch_0"></td>
-                            <td><input type="date" id="qualification_year_of_joining_0"
-                                    name="qualification_year_of_joining_0"></td>
-                            <td><input type="date" id="qualification_year_of_completion_0"
-                                    name="qualification_year_of_completion_0"></td>
-                            <td><input type="number" id="qualification_duration_0" name="qualification_duration_0"></td>
-                            <td><input type="text" id="qualification_percentage_0" name="qualification_percentage_0"></td>
-                            <td><input type="text" id="qualification_division_0" name="qualification_division_0"></td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td><input type="text" id="qualification_degree_1" name="qualification_degree_1"></td>
-                            <td><input type="text" id="qualification_institute_1" name="qualification_institute_1"></td>
-                            <td><input type="text" id="qualification_branch_1" name="qualification_branch_1"></td>
-                            <td><input type="date" id="qualification_year_of_joining_1"
-                                    name="cqualification_year_of_joining_1"></td>
-                            <td><input type="date" id="qualification_year_of_completion_1"
-                                    name="qualification_year_of_completion_1"></td>
-                            <td><input type="number" id="qualification_duration_1" name="qualification_duration_1"></td>
-                            <td><input type="text" id="qualification_percentage_1" name="qualification_percentage_1"></td>
-                            <td><input type="text" id="qualification_division_1" name="qualification_division_1"></td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td><input type="text" id="qualification_degree_2" name="qualification_degree_2"></td>
-                            <td><input type="text" id="qualification_institute_2" name="qualification_institute_2"></td>
-                            <td><input type="text" id="qualification_branch_2" name="qualification_branch_2"></td>
-                            <td><input type="date" id="qualification_year_of_joining_2"
-                                    name="cqualification_year_of_joining_2"></td>
-                            <td><input type="date" id="qualification_year_of_completion_2"
-                                    name="qualification_year_of_completion_2"></td>
-                            <td><input type="number" id="qualification_duration_2" name="qualification_duration_2"></td>
-                            <td><input type="text" id="qualification_percentage_2" name="qualification_percentage_2"></td>
-                            <td><input type="text" id="qualification_division_2" name="qualification_division_2"></td>
-                        </tr>
-                        <tr>
-                            <td>4</td>
-                            <td><input type="text" id="qualification_degree_3" name="qualification_degree_3"></td>
-                            <td><input type="text" id="qualification_institute_3" name="qualification_institute_3"></td>
-                            <td><input type="text" id="qualification_branch_3" name="qualification_branch_3"></td>
-                            <td><input type="date" id="qualification_year_of_joining_3"
-                                    name="cqualification_year_of_joining_3"></td>
-                            <td><input type="date" id="qualification_year_of_completion_3"
-                                    name="qualification_year_of_completion_3"></td>
-                            <td><input type="number" id="qualification_duration_3" name="qualification_duration_3"></td>
-                            <td><input type="text" id="qualification_percentage_3" name="qualification_percentage_3"></td>
-                            <td><input type="text" id="qualification_division_3" name="qualification_division_3"></td>
-                        </tr>
-                        <tr>
-                            <td>5</td>
-                            <td><input type="text" id="qualification_degree_4" name="qualification_degree_4"></td>
-                            <td><input type="text" id="qualification_institute_4" name="qualification_institute_4"></td>
-                            <td><input type="text" id="qualification_branch_4" name="qualification_branch_4"></td>
-                            <td><input type="date" id="qualification_year_of_joining_4"
-                                    name="cqualification_year_of_joining_4"></td>
-                            <td><input type="date" id="qualification_year_of_completion_4"
-                                    name="qualification_year_of_completion_4"></td>
-                            <td><input type="number" id="qualification_duration_4" name="qualification_duration_4"></td>
-                            <td><input type="text" id="qualification_percentage_4" name="qualification_percentage_4"></td>
-                            <td><input type="text" id="qualification_division_4" name="qualification_division_4"></td>
-                        </tr>
-                    </table>
-                </div>
-            </fieldset>
+                    </thead>
+                    <tbody>
+                        <!-- Dynamic rows for Additional Educational Qualification will be added here -->
+                    </tbody>
+                </table>
+            </div>
 
+               
+            </fieldset>
+            
         </section>
+
         <!-- Save and Next button -->
         <div class="btn-container">
             <a href="{% url 'page1' %}" class="btn btn-success mx-3">Previous Page</a>
-            <button type="submit" id="nextButton">Save And Next</button>
+            <button type="submit" class="btn btn-primary">Save And Next</button>
         </div>
     </form>
 </div>
+
+<script>
+    // JavaScript for dynamic addition and deletion of rows
+    document.addEventListener('DOMContentLoaded', function () {
+        const addRowBtn = document.getElementById('addRowBtn');
+        const tableBody = document.querySelector('#qualificationTable tbody');
+
+        // Add event listener for add button
+        addRowBtn.addEventListener('click', function () {
+            const newRow = `
+            <tr>
+                <td><input type="text" name="qualification_degree_" required></td>
+                <td><input type="text" name="qualification_institute_" required></td>
+                <td><input type="text" name="qualification_branch_" required></td>
+                <td><input type="date" name="qualification_year_of_joining_" required></td>
+                <td><input type="date" name="qualification_year_of_completion_" required></td>
+                <td><input type="number" name="qualification_duration_" required></td>
+                <td><input type="text" name="qualification_percentage_" required></td>
+                <td><input type="text" name="qualification_division_" required></td>
+                <td><button type="button" class="btn btn-danger deleteRowBtn">Delete</button></td>
+            </tr>
+            `;
+            tableBody.insertAdjacentHTML('beforeend', newRow);
+        });
+
+        // Add event listener for delete button
+        tableBody.addEventListener('click', function (event) {
+            if (event.target.classList.contains('deleteRowBtn')) {
+                event.target.closest('tr').remove();
+            }
+        });
+    });
+</script>
 {% endblock content %}

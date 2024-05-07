@@ -94,4 +94,8 @@ def page8(request):
     context={}
     return render(request,'app/page8.html',context)
 
+def page9(request):
+    context={}
+    return render(request,'app/page9.html',context)
+
 

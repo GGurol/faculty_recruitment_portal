@@ -1,385 +1,284 @@
 {% extends "base_form.html" %}
 {% block title %}Page5{% endblock title %}
 {% block content %}
-<div class="box">
-    <div class="row mt-4 mx-2 ">
-        <div class="col-6">
-            <h3>Welcome Animesh Tripathy</h3>
-        </div>
-        <div class="col-5">
-            <h3>Application Number : 12345678</h3>
-        </div>
-        <div class="col-1">
-            <a href="{% url 'logout' %}" class="btn btn-success mx-3">Logout</a>
-        </div>
-    </div>
-    <hr>
+<form action="" method="post">
+    {% csrf_token %}
+    <!-- Section 9: Membership of Professional Societies -->
+    <section>
+        <h4>9. Membership of Professional Societies</h4>
 
-    <form action="" method="post">
-
-        <!-- Section 9: Membership of Professional Societies -->
-        <section>
-            <h4>9. Membership of Professional Societies</h4>
-
-            <fieldset>
-                <legend>Membership of Professional Societies</legend>
-                <div class="table-responsive">
-                    <table class="table">
+        <fieldset>
+            <legend>Membership of Professional Societies</legend>
+            <button type="button" id="addRowBtn9" class="btn btn-primary mb-3">Add Professional Society</button>
+            <div class="table-responsive">
+                <table class="table" id="societyTable">
+                    <thead>
                         <tr>
-                            <th>S. No.</th>
                             <th>Name of the Professional Society</th>
                             <th>Membership Status (Lifetime/Annual)</th>
+                            <th>Action</th>
                         </tr>
-                        <!-- Row 1 -->
-                        <tr>
-                            <td>1</td>
-                            <td><input type="text" id="society_name_1" name="society_name_1"></td>
-                            <td>
-                                <select id="membership_status_1" name="membership_status_1">
-                                    <option value="Lifetime">Lifetime</option>
-                                    <option value="Annual">Annual</option>
-                                </select>
-                            </td>
-                        </tr>
-                        <!-- Row 2 -->
-                        <tr>
-                            <td>2</td>
-                            <td><input type="text" id="society_name_2" name="society_name_2"></td>
-                            <td>
-                                <select id="membership_status_2" name="membership_status_2">
-                                    <option value="Lifetime">Lifetime</option>
-                                    <option value="Annual">Annual</option>
-                                </select>
-                            </td>
-                        </tr>
-                        <!-- Row 3 -->
-                        <tr>
-                            <td>3</td>
-                            <td><input type="text" id="society_name_3" name="society_name_3"></td>
-                            <td>
-                                <select id="membership_status_3" name="membership_status_3">
-                                    <option value="Lifetime">Lifetime</option>
-                                    <option value="Annual">Annual</option>
-                                </select>
-                            </td>
-                        </tr>
-                    </table>
-                </div>
-            </fieldset>
-        </section>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+        </fieldset>
+    </section>
 
-        <!-- Section 10: Professional Training -->
-        <section>
-            <h4>10. Professional Training</h4>
+    <!-- Section 10: Professional Training -->
+    <section>
+        <h4>10. Professional Training</h4>
 
-            <fieldset>
-                <legend>Professional Training</legend>
-                <div class="table-responsive">
-                    <table class="table">
+        <fieldset>
+            <legend>Professional Training</legend>
+            <button type="button" id="addRowBtn10" class="btn btn-primary mb-3">Add Professional Training</button>
+            <div class="table-responsive">
+                <table class="table" id="profTrainTable">
+                    <thead>
                         <tr>
-                            <th>S. No.</th>
                             <th>Type of Training Received</th>
                             <th>Organisation</th>
                             <th>Year</th>
                             <th>Duration (in years)</th>
+                            <th>Action</th>
                         </tr>
-                        <!-- Row 1 -->
-                        <tr>
-                            <td>1</td>
-                            <td><input type="text" id="training_type_1" name="training_type_1"></td>
-                            <td><input type="text" id="training_organisation_1" name="training_organisation_1"></td>
-                            <td><input type="text" id="training_year_1" name="training_year_1"></td>
-                            <td><input type="number" id="training_durations_1" name="training_durations_1"></td>
-                        </tr>
-                        <!-- Row 2 -->
-                        <tr>
-                            <td>2</td>
-                            <td><input type="text" id="training_type_2" name="training_type_2"></td>
-                            <td><input type="text" id="training_organisation_2" name="training_organisation_2"></td>
-                            <td><input type="text" id="training_year_2" name="training_year_2"></td>
-                            <td><input type="number" id="training_durations_2" name="training_durations_2"></td>
-                        </tr>
-                        <!-- Row 3 -->
-                        <tr>
-                            <td>3</td>
-                            <td><input type="text" id="training_type_3" name="training_type_3"></td>
-                            <td><input type="text" id="training_organisation_3" name="training_organisation_3"></td>
-                            <td><input type="text" id="training_year_3" name="training_year_3"></td>
-                            <td><input type="number" id="training_durations_3" name="training_durations_3"></td>
-                        </tr>
-                        <!-- Row 4 -->
-                        <tr>
-                            <td>4</td>
-                            <td><input type="text" id="training_type_4" name="training_type_4"></td>
-                            <td><input type="text" id="training_organisation_4" name="training_organisation_4"></td>
-                            <td><input type="text" id="training_year_4" name="training_year_4"></td>
-                            <td><input type="number" id="training_durations_4" name="training_durations_4"></td>
-                        </tr>
-                        <!-- Row 5 -->
-                        <tr>
-                            <td>5</td>
-                            <td><input type="text" id="training_type_5" name="training_type_5"></td>
-                            <td><input type="text" id="training_organisation_5" name="training_organisation_5"></td>
-                            <td><input type="text" id="training_year_5" name="training_year_5"></td>
-                            <td><input type="number" id="training_durations_5" name="training_durations_5"></td>
-                        </tr>
-                    </table>
-                </div>
-            </fieldset>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+        </fieldset>
 
-        </section>
+    </section>
 
-        <!-- Section 11: Award(s) and Recognition(s) -->
-        <section>
-            <h4>11. Award(s) and Recognition(s)</h4>
-
-            <fieldset>
-                <legend>Award(s) and Recognition(s)</legend>
-                <div class="table-responsive">
-                    <table class="table">
+    <!-- Section 11: Award(s) and Recognition(s) -->
+    <section>
+        <h4>11. Award(s) and Recognition(s)</h4>
+        
+        <fieldset>
+            <legend>Award(s) and Recognition(s)</legend>
+            <button type="button" id="addRowBtn11" class="btn btn-primary mb-3">Add Award/Recognition</button>
+            <div class="table-responsive">
+                <table class="table" id="awardTable">
+                    <thead>
                         <tr>
-                            <th>S. No.</th>
                             <th>Name of Award</th>
                             <th>Awarded By</th>
                             <th>Year</th>
+                            <th>Action</th>
                         </tr>
-                        <!-- Row 1 -->
-                        <tr>
-                            <td>1</td>
-                            <td><input type="text" id="award_name_1" name="award_name_1"></td>
-                            <td><input type="text" id="awarded_by_1" name="awarded_by_1"></td>
-                            <td><input type="text" id="award_year_1" name="award_year_1"></td>
-                        </tr>
-                        <!-- Row 2 -->
-                        <tr>
-                            <td>2</td>
-                            <td><input type="text" id="award_name_2" name="award_name_2"></td>
-                            <td><input type="text" id="awarded_by_2" name="awarded_by_2"></td>
-                            <td><input type="text" id="award_year_2" name="award_year_2"></td>
-                        </tr>
-                        <!-- Row 3 -->
-                        <tr>
-                            <td>3</td>
-                            <td><input type="text" id="award_name_3" name="award_name_3"></td>
-                            <td><input type="text" id="awarded_by_3" name="awarded_by_3"></td>
-                            <td><input type="text" id="award_year_3" name="award_year_3"></td>
-                        </tr>
-                        <!-- Row 4 -->
-                        <tr>
-                            <td>4</td>
-                            <td><input type="text" id="award_name_4" name="award_name_4"></td>
-                            <td><input type="text" id="awarded_by_4" name="awarded_by_4"></td>
-                            <td><input type="text" id="award_year_4" name="award_year_4"></td>
-                        </tr>
-                        <!-- Row 5 -->
-                        <tr>
-                            <td>5</td>
-                            <td><input type="text" id="award_name_5" name="award_name_5"></td>
-                            <td><input type="text" id="awarded_by_5" name="awarded_by_5"></td>
-                            <td><input type="text" id="award_year_5" name="award_year_5"></td>
-                        </tr>
-                    </table>
-                </div>
-            </fieldset>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+        </fieldset>
 
-        </section>
+    </section>
 
-        <!-- Section 12: Sponsored Projects/ Consultancy Details -->
-        <section>
-            <h4>12. Sponsored Projects/ Consultancy Details</h4>
+    <!-- Section 12: Sponsored Projects/ Consultancy Details -->
+    <section>
+        <h4>12. Sponsored Projects/ Consultancy Details</h4>
 
-            <fieldset>
-                <legend>(A) Sponsored Projects</legend>
-                <div class="table-responsive">
-                    <table class="table">
+        <fieldset>
+            <legend>(A) Sponsored Projects</legend>
+            <button type="button" id="addRowBtn12A" class="btn btn-primary mb-3">Add Sponsored Project</button>
+            <div class="table-responsive">
+                <table class="table" id="sponsProjTable">
+                    <thead>
                         <tr>
-                            <th>S. No.</th>
                             <th>Sponsoring Agency</th>
                             <th>Title of Project</th>
                             <th>Sanctioned Amount (₹)</th>
                             <th>Period</th>
                             <th>Role</th>
                             <th>Status</th>
+                            <th>Action</th>
                         </tr>
-                        <!-- Row 1 -->
-                        <tr>
-                            <td>1</td>
-                            <td><input type="text" id="sponsored_agency_1" name="sponsored_agency_1"></td>
-                            <td><input type="text" id="sponsored_title_1" name="sponsored_title_1"></td>
-                            <td><input type="text" id="sponsored_amount_1" name="sponsored_amount_1"></td>
-                            <td><input type="text" id="sponsored_period_1" name="sponsored_period_1"></td>
-                            <td>
-                                <select id="sponsored_role_1" name="sponsored_role_1">
-                                    <option value="Principal Investor">Principal Investor</option>
-                                    <option value="Co-Investor">Co-Investor</option>
-                                </select>
-                            </td>
-                            <td><input type="text" id="sponsored_status_1" name="sponsored_status_1"></td>
-                        </tr>
-                        <!-- Row 2 -->
-                        <tr>
-                            <td>2</td>
-                            <td><input type="text" id="sponsored_agency_2" name="sponsored_agency_2"></td>
-                            <td><input type="text" id="sponsored_title_2" name="sponsored_title_2"></td>
-                            <td><input type="text" id="sponsored_amount_2" name="sponsored_amount_2"></td>
-                            <td><input type="text" id="sponsored_period_2" name="sponsored_period_2"></td>
-                            <td>
-                                <select id="sponsored_role_2" name="sponsored_role_2">
-                                    <option value="Principal Investor">Principal Investor</option>
-                                    <option value="Co-Investor">Co-Investor</option>
-                                </select>
-                            </td>
-                            <td><input type="text" id="sponsored_status_2" name="sponsored_status_2"></td>
-                        </tr>
-                        <!-- Row 3 -->
-                        <tr>
-                            <td>3</td>
-                            <td><input type="text" id="sponsored_agency_3" name="sponsored_agency_3"></td>
-                            <td><input type="text" id="sponsored_title_3" name="sponsored_title_3"></td>
-                            <td><input type="text" id="sponsored_amount_3" name="sponsored_amount_3"></td>
-                            <td><input type="text" id="sponsored_period_3" name="sponsored_period_3"></td>
-                            <td>
-                                <select id="sponsored_role_3" name="sponsored_role_3">
-                                    <option value="Principal Investor">Principal Investor</option>
-                                    <option value="Co-Investor">Co-Investor</option>
-                                </select>
-                            </td>
-                            <td><input type="text" id="sponsored_status_3" name="sponsored_status_3"></td>
-                        </tr>
-                        <!-- Row 4 -->
-                        <tr>
-                            <td>4</td>
-                            <td><input type="text" id="sponsored_agency_4" name="sponsored_agency_4"></td>
-                            <td><input type="text" id="sponsored_title_4" name="sponsored_title_4"></td>
-                            <td><input type="text" id="sponsored_amount_4" name="sponsored_amount_4"></td>
-                            <td><input type="text" id="sponsored_period_4" name="sponsored_period_4"></td>
-                            <td>
-                                <select id="sponsored_role_4" name="sponsored_role_4">
-                                    <option value="Principal Investor">Principal Investor</option>
-                                    <option value="Co-Investor">Co-Investor</option>
-                                </select>
-                            </td>
-                            <td><input type="text" id="sponsored_status_4" name="sponsored_status_4"></td>
-                        </tr>
-                        <!-- Row 5 -->
-                        <tr>
-                            <td>5</td>
-                            <td><input type="text" id="sponsored_agency_5" name="sponsored_agency_5"></td>
-                            <td><input type="text" id="sponsored_title_5" name="sponsored_title_5"></td>
-                            <td><input type="text" id="sponsored_amount_5" name="sponsored_amount_5"></td>
-                            <td><input type="text" id="sponsored_period_5" name="sponsored_period_5"></td>
-                            <td>
-                                <select id="sponsored_role_5" name="sponsored_role_5">
-                                    <option value="Principal Investor">Principal Investor</option>
-                                    <option value="Co-Investor">Co-Investor</option>
-                                </select>
-                            </td>
-                            <td><input type="text" id="sponsored_status_5" name="sponsored_status_5"></td>
-                        </tr>
-                    </table>
-                </div>
-            </fieldset>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+        </fieldset>
 
-            <fieldset>
-                <legend>(B) Consultancy Projects</legend>
-                <div class="table-responsive">
-                    <table class="table">
+        <fieldset>
+            <legend>(B) Consultancy Projects</legend>
+            <button type="button" id="addRowBtn12B" class="btn btn-primary mb-3">Add Consultancy Project</button>
+            <div class="table-responsive">
+                <table class="table" id="consProjTable">
+                    <thead>
                         <tr>
-                            <th>S. No.</th>
                             <th>Organisation</th>
                             <th>Title of Project</th>
                             <th>Amount of Grant (₹)</th>
                             <th>Period</th>
                             <th>Role</th>
                             <th>Status</th>
+                            <th>Action</th>
                         </tr>
-                        <!-- Row 1 -->
-                        <tr>
-                            <td>1</td>
-                            <td><input type="text" id="consultancy_organisation_1" name="consultancy_organisation_1"></td>
-                            <td><input type="text" id="consultancy_title_1" name="consultancy_title_1"></td>
-                            <td><input type="text" id="consultancy_amount_1" name="consultancy_amount_1"></td>
-                            <td><input type="text" id="consultancy_period_1" name="consultancy_period_1"></td>
-                            <td>
-                                <select id="consultancy_role_1" name="consultancy_role_1">
-                                    <option value="Principal Investor">Principal Investor</option>
-                                    <option value="Co-Investor">Co-Investor</option>
-                                </select>
-                            </td>
-                            <td><input type="text" id="consultancy_status_1" name="consultancy_status_1"></td>
-                        </tr>
-                        <!-- Row 2 -->
-                        <tr>
-                            <td>2</td>
-                            <td><input type="text" id="consultancy_organisation_2" name="consultancy_organisation_2"></td>
-                            <td><input type="text" id="consultancy_title_2" name="consultancy_title_2"></td>
-                            <td><input type="text" id="consultancy_amount_2" name="consultancy_amount_2"></td>
-                            <td><input type="text" id="consultancy_period_2" name="consultancy_period_2"></td>
-                            <td>
-                                <select id="consultancy_role_2" name="consultancy_role_2">
-                                    <option value="Principal Investor">Principal Investor</option>
-                                    <option value="Co-Investor">Co-Investor</option>
-                                </select>
-                            </td>
-                            <td><input type="text" id="consultancy_status_2" name="consultancy_status_2"></td>
-                        </tr>
-                        <!-- Row 3 -->
-                        <tr>
-                            <td>3</td>
-                            <td><input type="text" id="consultancy_organisation_3" name="consultancy_organisation_3"></td>
-                            <td><input type="text" id="consultancy_title_3" name="consultancy_title_3"></td>
-                            <td><input type="text" id="consultancy_amount_3" name="consultancy_amount_3"></td>
-                            <td><input type="text" id="consultancy_period_3" name="consultancy_period_3"></td>
-                            <td>
-                                <select id="consultancy_role_3" name="consultancy_role_3">
-                                    <option value="Principal Investor">Principal Investor</option>
-                                    <option value="Co-Investor">Co-Investor</option>
-                                </select>
-                            </td>
-                            <td><input type="text" id="consultancy_status_3" name="consultancy_status_3"></td>
-                        </tr>
-                        <!-- Row 4 -->
-                        <tr>
-                            <td>4</td>
-                            <td><input type="text" id="consultancy_organisation_4" name="consultancy_organisation_4"></td>
-                            <td><input type="text" id="consultancy_title_4" name="consultancy_title_4"></td>
-                            <td><input type="text" id="consultancy_amount_4" name="consultancy_amount_4"></td>
-                            <td><input type="text" id="consultancy_period_4" name="consultancy_period_4"></td>
-                            <td>
-                                <select id="consultancy_role_4" name="consultancy_role_4">
-                                    <option value="Principal Investor">Principal Investor</option>
-                                    <option value="Co-Investor">Co-Investor</option>
-                                </select>
-                            </td>
-                            <td><input type="text" id="consultancy_status_4" name="consultancy_status_4"></td>
-                        </tr>
-                        <!-- Row 5 -->
-                        <tr>
-                            <td>5</td>
-                            <td><input type="text" id="consultancy_organisation_5" name="consultancy_organisation_5"></td>
-                            <td><input type="text" id="consultancy_title_5" name="consultancy_title_5"></td>
-                            <td><input type="text" id="consultancy_amount_5" name="consultancy_amount_5"></td>
-                            <td><input type="text" id="consultancy_period_5" name="consultancy_period_5"></td>
-                            <td>
-                                <select id="consultancy_role_5" name="consultancy_role_5">
-                                    <option value="Principal Investor">Principal Investor</option>
-                                    <option value="Co-Investor">Co-Investor</option>
-                                </select>
-                            </td>
-                            <td><input type="text" id="consultancy_status_5" name="consultancy_status_5"></td>
-                        </tr>
-                    </table>
-                </div>
-            </fieldset>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+        </fieldset>
 
-        </section>
+    </section>
 
 
-        <!-- Save and Next button -->
-        <div class="btn-container">
-            <a href="{% url 'page4' %}" class="btn btn-success mx-3">Previous Page</a>
-            <button type="submit" id="nextButton">Save And Next</button>
-        </div>
-    </form>
-</div>
+    <!-- Save and Next button -->
+    <div class="btn-container">
+        <a href="{% url 'page4' %}" class="btn btn-success mx-3">Previous Page</a>
+        <button type="submit" id="nextButton">Save And Next</button>
+    </div>
+</form>
+
+<script>
+    // JavaScript for dynamic addition and deletion of rows
+    document.addEventListener('DOMContentLoaded', function () {
+
+        //9
+        const addRowBtn9 = document.getElementById('addRowBtn9');
+        const tableBody9 = document.querySelector('#societyTable tbody');
+
+        // Add event listener for add button
+        addRowBtn9.addEventListener('click', function () {
+            const newRow = `
+              <tr>
+                <td><input type="text" name="society_name_"></td>
+                <td>
+                    <select name="membership_status_">
+                        <option value="Lifetime">Lifetime</option>
+                        <option value="Annual">Annual</option>
+                    </select>
+                </td>
+                <td><button type="button" class="btn btn-danger deleteRowBtn">Delete</button></td>
+            </tr>
+              `;
+            tableBody9.insertAdjacentHTML('beforeend', newRow);
+        });
+
+        // Add event listener for delete button
+        tableBody9.addEventListener('click', function (event) {
+            if (event.target.classList.contains('deleteRowBtn')) {
+                event.target.closest('tr').remove();
+            }
+        });
+
+        //10
+        const addRowBtn10 = document.getElementById('addRowBtn10');
+        const tableBody10 = document.querySelector('#profTrainTable tbody');
+        // Add event listener for add button
+        addRowBtn10.addEventListener('click', function () {
+            const newRow = `
+              <tr>
+                <td><input type="text" name="training_type_"></td>
+                <td><input type="text" name="training_organisation_"></td>
+                <td><input type="text" name="training_year_"></td>
+                <td><input type="number" name="training_durations_"></td>
+                <td><button type="button" class="btn btn-danger deleteRowBtn">Delete</button></td>
+            </tr>
+              `;
+            tableBody10.insertAdjacentHTML('beforeend', newRow);
+        });
+
+        // Add event listener for delete button
+        tableBody10.addEventListener('click', function (event) {
+            if (event.target.classList.contains('deleteRowBtn')) {
+                event.target.closest('tr').remove();
+            }
+        });
+
+        //11
+        const addRowBtn11 = document.getElementById('addRowBtn11');
+        const tableBody11 = document.querySelector('#awardTable tbody');
+        // Add event listener for add button
+        addRowBtn11.addEventListener('click', function () {
+            const newRow = `
+              <tr>
+                <td><input type="text" name="award_name_"></td>
+                <td><input type="text" name="awarded_by_"></td>
+                <td><input type="text" name="award_year_"></td>
+                <td><button type="button" class="btn btn-danger deleteRowBtn">Delete</button></td>
+            </tr>
+              `;
+            tableBody11.insertAdjacentHTML('beforeend', newRow);
+        });
+
+        // Add event listener for delete button
+        tableBody11.addEventListener('click', function (event) {
+            if (event.target.classList.contains('deleteRowBtn')) {
+                event.target.closest('tr').remove();
+            }
+        });
+
+
+        //12A
+        const addRowBtn12A = document.getElementById('addRowBtn12A');
+        const tableBody12A = document.querySelector('#sponsProjTable tbody');
+        // Add event listener for add button
+        addRowBtn12A.addEventListener('click', function () {
+            const newRow = `
+              <tr>
+                <td><input type="text" name="sponsored_agency_"></td>
+                <td><input type="text" name="sponsored_title_"></td>
+                <td><input type="text" name="sponsored_amount_"></td>
+                <td><input type="text" name="sponsored_period_"></td>
+                <td>
+                    <select name="sponsored_role_">
+                        <option value="Principal Investor">Principal Investor</option>
+                        <option value="Co-Investor">Co-Investor</option>
+                    </select>
+                </td>
+                <td><input type="text" name="sponsored_status_"></td>
+                <td><button type="button" class="btn btn-danger deleteRowBtn">Delete</button></td>
+            </tr>
+              `;
+            tableBody12A.insertAdjacentHTML('beforeend', newRow);
+        });
+
+        // Add event listener for delete button
+        tableBody12A.addEventListener('click', function (event) {
+            if (event.target.classList.contains('deleteRowBtn')) {
+                event.target.closest('tr').remove();
+            }
+        });
+
+
+        //12B
+        const addRowBtn12B = document.getElementById('addRowBtn12B');
+        const tableBody12B = document.querySelector('#consProjTable tbody');
+        // Add event listener for add button
+        addRowBtn12B.addEventListener('click', function () {
+            const newRow = `
+              <tr>
+                <td><input type="text" name="consultancy_organisation_"></td>
+                <td><input type="text" name="consultancy_title_"></td>
+                <td><input type="text" name="consultancy_amount_"></td>
+                <td><input type="text" name="consultancy_period_"></td>
+                <td>
+                    <select name="consultancy_role_">
+                        <option value="Principal Investor">Principal Investor</option>
+                        <option value="Co-Investor">Co-Investor</option>
+                    </select>
+                </td>
+                <td><input type="text" name="consultancy_status_"></td>
+                <td><button type="button" class="btn btn-danger deleteRowBtn">Delete</button></td>
+            </tr>
+              `;
+            tableBody12B.insertAdjacentHTML('beforeend', newRow);
+        });
+
+        // Add event listener for delete button
+        tableBody12B.addEventListener('click', function (event) {
+            if (event.target.classList.contains('deleteRowBtn')) {
+                event.target.closest('tr').remove();
+            }
+        });
+
+
+    });
+</script>
 {% endblock content %}

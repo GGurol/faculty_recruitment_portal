@@ -1,19 +1,169 @@
 {% extends "base_form.html" %}
 {% block title %}Page8{% endblock title %}
 {% block content %}
-<div class="box">
-    <div class="row mt-4 mx-2 ">
-        <div class="col-6">
-            <h3>Welcome Animesh Tripathy</h3>
-        </div>
-        <div class="col-5">
-            <h3>Application Number : 12345678</h3>
-        </div>
-        <div class="col-1">
-            <a href="{% url 'logout' %}" class="btn btn-success mx-3">Logout</a>
-        </div>
-    </div>
-    <hr>
+<form action="" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <section>
+        <fieldset>
+            <legend>20 Reprints of 5 Best Research Papers *</legend>
+            <div class="mb-4">
+                <input type="file" name="research_papers" accept=".pdf" id="research_papers" class="form-control">
+                <span>Update 5 Best Research Papers </span> 
+                <button type="button" onclick="viewUploadedFile('research_papers')" class="btn btn-primary mt-2">View Uploaded File</button>
+            </div>
+        </fieldset>
+    </section>
+   
+    <section>
+        <fieldset>
+            <legend>21. Check List of the documents attached with the online application *</legend>
+            <p>Note- Check List of the documents attached with the online application (Documents should be uploaded in PDF format only): Uploaded PDF files will not be displayed as part of the printed form.</p>
+            <div class="mb-4">
+                <ul class="list-unstyled">
+                    <li>
+                        <input type="file" name="phd_certificate" accept=".pdf" id="phd_certificate" class="form-control">
+                        <button type="button" onclick="viewUploadedFile('phd_certificate')" class="btn btn-primary mt-2">View Uploaded File</button>
+                        Update PHD Certificate
+                    </li> <hr>
+                    <li>
+                        <input type="file" name="pg_documents" accept=".pdf" id="pg_documents" class="form-control">
+                        <button type="button" onclick="viewUploadedFile('pg_documents')" class="btn btn-primary mt-2">View Uploaded File</button>
+                        Update PG Documents(Marksheets and Degree certificate)
+                    </li> <hr>
+                    <li>
+                        <input type="file" name="ug_documents" accept=".pdf" id="ug_documents" class="form-control">
+                        <button type="button" onclick="viewUploadedFile('ug_documents')" class="btn btn-primary mt-2">View Uploaded File</button>
+                        Update UG Documents(Marksheets and Degree certificate)
+                    </li> <hr>
+                    <li>
+                        <input type="file" name="12th_certificate" accept=".pdf" id="12th_certificate" class="form-control">
+                        <button type="button" onclick="viewUploadedFile('12th_certificate')" class="btn btn-primary mt-2">View Uploaded File</button>
+                        Update 12th/HSC/Diploma/Marksheet(s) and passing certificate
+                    </li> <hr>
+                    <li>
+                        <input type="file" name="10th_certificate" accept=".pdf" id="10th_certificate" class="form-control">
+                        <button type="button" onclick="viewUploadedFile('10th_certificate')" class="btn btn-primary mt-2">View Uploaded File</button>
+                        Update 10th/SSC Documents/Marksheets
+                    </li> <hr>
+                    <li>
+                        <input type="file" name="pay_slip" accept=".pdf" id="pay_slip" class="form-control">
+                        <button type="button" onclick="viewUploadedFile('pay_slip')" class="btn btn-primary mt-2">View Uploaded File</button>
+                        Update Pay Slip
+                    </li> <hr>
+                    <li>
+                        <input type="file" name="noc_undertaking" accept=".pdf" id="noc_undertaking" class="form-control">
+                        <button type="button" onclick="viewUploadedFile('noc_undertaking')" class="btn btn-primary mt-2">View Uploaded File</button>
+                        NOC or Undertaking
+                    </li> <hr>
+                    <li>
+                        <input type="file" name="post_phd_experience" accept=".pdf" id="post_phd_experience" class="form-control">
+                        <button type="button" onclick="viewUploadedFile('post_phd_experience')" class="btn btn-primary mt-2">View Uploaded File</button>
+                        Post PhD Experience Certificate/All Experience Certificates/Last Pay slip/
+                    </li> <hr>
+                    <li>
+                        <input type="file" name="other_documents" accept=".pdf" id="other_documents" class="form-control">
+                        <button type="button" onclick="viewUploadedFile('other_documents')" class="btn btn-primary mt-2">View Uploaded File</button>
+                        Upload any other relevant document in a single PDF (For example award certificate, experience certificate etc) < 1MB.
+                    </li> <hr>
+                </ul>
+                <hr>
+                <div class="mb-4">
+                    <h2>Upload your Signature in JPG only (image)</h2>
+                    <input type="file" name="signature" accept="image/jpeg" id="signature" class="form-control">
+                    <button type="button" onclick="viewUploadedFile('signature')" class="btn btn-primary mt-2">View Uploaded File</button>
+                </div>
+            </div>
     
-</div>
+        </fieldset>
+    </section>
+
+    <!-- Section 22: Referees -->
+    <section>
+        <h4>22. Referees</h4>
+
+        <fieldset>
+            <legend>Referees</legend>
+            <button type="button" id="addRowBtn22" class="btn btn-primary mb-3">Add Referees</button>
+            <div class="table-responsive">
+                <table class="table" id="refereeTable">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Position</th>
+                            <th>Association with Referee</th>
+                            <th>Institution/Organization</th>
+                            <th>Email</th>
+                            <th>Mobile No.</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+        </fieldset>
+    </section>
+
+    <!-- Save and Next button -->
+    <div class="btn-container">
+        <a href="{% url 'page7' %}" class="btn btn-success mx-3 p-2">Previous Page</a>
+        <button type="submit" id="nextButton">Save And Next</button>
+    </div>
+</form>
+
+<script>
+    function viewUploadedFile(inputId) {
+        const fileInput = document.getElementById(inputId);
+        const file = fileInput.files[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.readAsDataURL(file);
+            reader.onload = function (e) {
+                window.open(e.target.result);
+            };
+        } else {
+            alert("No file selected!");
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+
+        //22
+        const addRowBtn22 = document.getElementById('addRowBtn22');
+        const tableBody22 = document.querySelector('#refereeTable tbody');
+        // Add event listener for add button
+        addRowBtn22.addEventListener('click', function () {
+            const newRow = `
+              <tr>
+                <td><input type="text" name="referee_name_"></td>
+                <td><input type="text" name="referee_position_"></td>
+                <td>
+                    <select name="referee_relation_">
+                        <option value="Thesis Supervisor">Thesis Supervisor
+                        </option>
+                        <option value="Postdoc Supervisor">Postdoc Supervisor</option>
+                        <option value="Research Collaborator">Research Collaborator</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </td>
+                <td><input type="text" name="referee_organisation_"></td>
+                <td><input type="emai" name="referee_email_"></td>
+                <td><input type="text" name="referee_mobile_"></td>
+                <td><button type="button" class="btn btn-danger deleteRowBtn">Delete</button></td>
+            </tr>
+              `;
+            tableBody22.insertAdjacentHTML('beforeend', newRow);
+        });
+
+        // Add event listener for delete button
+        tableBody22.addEventListener('click', function (event) {
+            if (event.target.classList.contains('deleteRowBtn')) {
+                event.target.closest('tr').remove();
+            }
+        });
+    });
+
+</script>
+
 {% endblock content %}
+   

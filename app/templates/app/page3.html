@@ -1,595 +1,170 @@
-{% extends "base_form.html" %} 
-{% block title %}Page3{% endblock title %} 
+{% extends "base_form.html" %}
+{% block title %}Page3{% endblock title %}
 {% block content %}
-<div class="box">
-  <div class="row mt-4 mx-2">
-    <div class="col-6">
-      <h3>Welcome Animesh Tripathy</h3>
-    </div>
-    <div class="col-5">
-      <h3>Application Number : 12345678</h3>
-    </div>
-    <div class="col-1">
-        <a href="{% url 'logout' %}" class="btn btn-success mx-3">Logout</a>
-    </div>
-  </div>
-  <hr />
-  <form action="" method="post">
+<form action="" method="post">
     <!-- Section 3: Employment Details -->
     <section>
-      <h4>3. Employment Details</h4>
+        <h4>3. Employment Details</h4>
 
-      <!-- Subsection A: Present Employment -->
-      <fieldset>
-        <legend>(A) Present Employment</legend>
+        <!-- Subsection A: Present Employment -->
+        <fieldset>
+            <legend>(A) Present Employment</legend>
 
-        <div class="row">
-          <div class="col">
-            <label for="position">Position:</label>
-            <input type="text" id="position" name="position" />
-          </div>
-          <div class="col">
-            <label for="organisation">Organisation/Institution:</label>
-            <input type="text" id="organisation" name="organisation" />
-          </div>
-        </div>
+            <div class="row">
+                <div class="col">
+                    <label for="position">Position:</label>
+                    <input type="text" id="position" name="position" />
+                </div>
+                <div class="col">
+                    <label for="organisation">Organisation/Institution:</label>
+                    <input type="text" id="organisation" name="organisation" />
+                </div>
+            </div>
 
-        <div class="row">
-          <div class="col">
-            <label for="status">Status:</label>
-            <select id="status" name="status">
-              <option value="Central Govt.">Central Govt.</option>
-              <option value="State Govt.">State Govt.</option>
-              <option value="Private">Private</option>
-              <option value="Quasi Govt.">Quasi Govt.</option>
-              <option value="Self Employeed">Self Employeed</option>
-              <option value="Others">Others</option>
-            </select>
-          </div>
-          <div class="col">
-            <label for="joiningDate">Date of Joining:</label>
-            <input type="date" id="joiningDate" name="joiningDate" />
-          </div>
-        </div>
+            <div class="row">
+                <div class="col">
+                    <label for="status">Status:</label>
+                    <select id="status" name="status">
+                        <option value="Central Govt.">Central Govt.</option>
+                        <option value="State Govt.">State Govt.</option>
+                        <option value="Private">Private</option>
+                        <option value="Quasi Govt.">Quasi Govt.</option>
+                        <option value="Self Employeed">Self Employeed</option>
+                        <option value="Others">Others</option>
+                    </select>
+                </div>
+                <div class="col">
+                    <label for="joiningDate">Date of Joining:</label>
+                    <input type="date" id="joiningDate" name="joiningDate" />
+                </div>
+            </div>
 
-        <div class="row">
-          <div class="col">
-            <label for="leavingDate">Date of Leaving:</label>
-            <input type="date" id="leavingDate" name="leavingDate" />
-          </div>
-          <div class="col">
-            <label for="duration">Duration (in years):</label>
-            <input type="number" id="duration" name="duration" />
-          </div>
-        </div>
-      </fieldset>
+            <div class="row">
+                <div class="col">
+                    <label for="leavingDate">Date of Leaving:</label>
+                    <input type="date" id="leavingDate" name="leavingDate" />
+                </div>
+                <div class="col">
+                    <label for="duration">Duration (in years):</label>
+                    <input type="number" id="duration" name="duration" />
+                </div>
+            </div>
+        </fieldset>
 
-      <!-- Subsection B: Employment History (After PhD, Starting with Latest) -->
+        <!-- Subsection B: Employment History (After PhD, Starting with Latest) -->
         <fieldset>
             <legend>(B) Employment History (After PhD, Starting with Latest)</legend>
+
+            <button type="button" id="addRowBtn3B" class="btn btn-primary mb-3">Add Employment History</button>
             <div class="table-responsive">
-                <table class="table">
-                    <tr>
-                        <th>S. No.</th>
-                        <th>Position</th>
-                        <th>Organisation/Institution</th>
-                        <th>Date of Joining</th>
-                        <th>Date of Leaving</th>
-                        <th>Duration (in years)</th>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td><input type="text" id="employment_position_0" name="employment_position_0"></td>
-                        <td><input type="text" id="employment_organisation_0" name="employment_organisation_0"></td>
-                        <td><input type="date" id="employment_join_date_0" name="employment_join_date_0"></td>
-                        <td><input type="date" id="employment_leave_date_0" name="employment_leave_date_0"></td>
-                        <td><input type="number" id="employment_duration_0" name="employment_duration_0"></td>
-                    </tr>
-                    <!-- Additional rows -->
-                    <tr>
-                        <td>2</td>
-                        <td><input type="text" id="employment_position_1" name="employment_position_1"></td>
-                        <td><input type="text" id="employment_organisation_1" name="employment_organisation_1"></td>
-                        <td><input type="date" id="employment_join_date_1" name="employment_join_date_1"></td>
-                        <td><input type="date" id="employment_leave_date_1" name="employment_leave_date_1"></td>
-                        <td><input type="number" id="employment_duration_1" name="employment_duration_1"></td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td><input type="text" id="employment_position_2" name="employment_position_2"></td>
-                        <td><input type="text" id="employment_organisation_2" name="employment_organisation_2"></td>
-                        <td><input type="date" id="employment_join_date_2" name="employment_join_date_2"></td>
-                        <td><input type="date" id="employment_leave_date_2" name="employment_leave_date_2"></td>
-                        <td><input type="number" id="employment_duration_2" name="employment_duration_2"></td>
-                    </tr>
-                    <tr>
-                        <td>4</td>
-                        <td><input type="text" id="employment_position_3" name="employment_position_3"></td>
-                        <td><input type="text" id="employment_organisation_3" name="employment_organisation_3"></td>
-                        <td><input type="date" id="employment_join_date_3" name="employment_join_date_3"></td>
-                        <td><input type="date" id="employment_leave_date_3" name="employment_leave_date_3"></td>
-                        <td><input type="number" id="employment_duration_3" name="employment_duration_3"></td>
-                    </tr>
-                    <tr>
-                        <td>5</td>
-                        <td><input type="text" id="employment_position_4" name="employment_position_4"></td>
-                        <td><input type="text" id="employment_organisation_4" name="employment_organisation_4"></td>
-                        <td><input type="date" id="employment_join_date_4" name="employment_join_date_4"></td>
-                        <td><input type="date" id="employment_leave_date_4" name="employment_leave_date_4"></td>
-                        <td><input type="number" id="employment_duration_4" name="employment_duration_4"></td>
-                    </tr>
+                <table class="table" id="employmentHistoryTable">
+                    <thead>
+                        <tr>
+                            <th>Position</th>
+                            <th>Organisation/Institution</th>
+                            <th>Date of Joining</th>
+                            <th>Date of Leaving</th>
+                            <th>Duration (in years)</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
                 </table>
             </div>
         </fieldset>
 
-      <!-- Subsection C: Teaching Experience (After PhD) -->
-      <fieldset>
-        <legend>(C) Teaching Experience (After PhD)</legend>
-        <div class="table-responsive">
-          <table class="table">
-            <tr>
-              <th>S. No.</th>
-              <th>Position</th>
-              <th>Employer</th>
-              <th>Course Taught</th>
-              <th>UG/PG</th>
-              <th>Number of Students</th>
-              <th>Date of Joining</th>
-              <th>Date of Leaving</th>
-              <th>Duration (in years)</th>
-            </tr>
-            <tr>
-              <td>1</td>
-              <td>
-                <input
-                  type="text"
-                  id="teaching_position_0"
-                  name="teaching_position_0"
-                />
-              </td>
-              <td>
-                <input
-                  type="text"
-                  id="teaching_employer_0"
-                  name="teaching_employer_0"
-                />
-              </td>
-              <td>
-                <input
-                  type="text"
-                  id="teaching_course_0"
-                  name="teaching_course_0"
-                />
-              </td>
-              <td>
-                <select id="teaching_type_0" name="teaching_type_0">
-                  <option value="UG">UG</option>
-                  <option value="PG">PG</option>
-                </select>
-              </td>
-              <td>
-                <input
-                  type="number"
-                  id="teaching_students_0"
-                  name="teaching_students_0"
-                />
-              </td>
-              <td>
-                <input
-                  type="date"
-                  id="teaching_join_date_0"
-                  name="teaching_join_date_0"
-                />
-              </td>
-              <td>
-                <input
-                  type="date"
-                  id="teaching_leave_date_0"
-                  name="teaching_leave_date_0"
-                />
-              </td>
-              <td>
-                <input
-                  type="number"
-                  id="teaching_duration_0"
-                  name="teaching_duration_0"
-                />
-              </td>
-            </tr>
-            <!-- Row 2 -->
-            <tr>
-              <td>2</td>
-              <td>
-                <input
-                  type="text"
-                  id="teaching_position_1"
-                  name="teaching_position_1"
-                />
-              </td>
-              <td>
-                <input
-                  type="text"
-                  id="teaching_employer_1"
-                  name="teaching_employer_1"
-                />
-              </td>
-              <td>
-                <input
-                  type="text"
-                  id="teaching_course_1"
-                  name="teaching_course_1"
-                />
-              </td>
-              <td>
-                <select id="teaching_type_1" name="teaching_type_1">
-                  <option value="UG">UG</option>
-                  <option value="PG">PG</option>
-                </select>
-              </td>
-              <td>
-                <input
-                  type="number"
-                  id="teaching_students_1"
-                  name="teaching_students_1"
-                />
-              </td>
-              <td>
-                <input
-                  type="date"
-                  id="teaching_join_date_1"
-                  name="teaching_join_date_1"
-                />
-              </td>
-              <td>
-                <input
-                  type="date"
-                  id="teaching_leave_date_1"
-                  name="teaching_leave_date_1"
-                />
-              </td>
-              <td>
-                <input
-                  type="number"
-                  id="teaching_duration_1"
-                  name="teaching_duration_1"
-                />
-              </td>
-            </tr>
-            <!-- Row 3 -->
-            <tr>
-              <td>3</td>
-              <td>
-                <input
-                  type="text"
-                  id="teaching_position_2"
-                  name="teaching_position_2"
-                />
-              </td>
-              <td>
-                <input
-                  type="text"
-                  id="teaching_employer_2"
-                  name="teaching_employer_2"
-                />
-              </td>
-              <td>
-                <input
-                  type="text"
-                  id="teaching_course_2"
-                  name="teaching_course_2"
-                />
-              </td>
-              <td>
-                <select id="teaching_type_2" name="teaching_type_2">
-                  <option value="UG">UG</option>
-                  <option value="PG">PG</option>
-                </select>
-              </td>
-              <td>
-                <input
-                  type="number"
-                  id="teaching_students_2"
-                  name="teaching_students_2"
-                />
-              </td>
-              <td>
-                <input
-                  type="date"
-                  id="teaching_join_date_2"
-                  name="teaching_join_date_2"
-                />
-              </td>
-              <td>
-                <input
-                  type="date"
-                  id="teaching_leave_date_2"
-                  name="teaching_leave_date_2"
-                />
-              </td>
-              <td>
-                <input
-                  type="number"
-                  id="teaching_duration_2"
-                  name="teaching_duration_2"
-                />
-              </td>
-            </tr>
-            <!-- Row 4 -->
-            <tr>
-              <td>4</td>
-              <td>
-                <input
-                  type="text"
-                  id="teaching_position_3"
-                  name="teaching_position_3"
-                />
-              </td>
-              <td>
-                <input
-                  type="text"
-                  id="teaching_employer_3"
-                  name="teaching_employer_3"
-                />
-              </td>
-              <td>
-                <input
-                  type="text"
-                  id="teaching_course_3"
-                  name="teaching_course_3"
-                />
-              </td>
-              <td>
-                <select id="teaching_type_3" name="teaching_type_3">
-                  <option value="UG">UG</option>
-                  <option value="PG">PG</option>
-                </select>
-              </td>
-              <td>
-                <input
-                  type="number"
-                  id="teaching_students_3"
-                  name="teaching_students_3"
-                />
-              </td>
-              <td>
-                <input
-                  type="date"
-                  id="teaching_join_date_3"
-                  name="teaching_join_date_3"
-                />
-              </td>
-              <td>
-                <input
-                  type="date"
-                  id="teaching_leave_date_3"
-                  name="teaching_leave_date_3"
-                />
-              </td>
-              <td>
-                <input
-                  type="number"
-                  id="teaching_duration_3"
-                  name="teaching_duration_3"
-                />
-              </td>
-            </tr>
-            <!-- Row 5 -->
-            <tr>
-              <td>5</td>
-              <td>
-                <input
-                  type="text"
-                  id="teaching_position_4"
-                  name="teaching_position_4"
-                />
-              </td>
-              <td>
-                <input
-                  type="text"
-                  id="teaching_employer_4"
-                  name="teaching_employer_4"
-                />
-              </td>
-              <td>
-                <input
-                  type="text"
-                  id="teaching_course_4"
-                  name="teaching_course_4"
-                />
-              </td>
-              <td>
-                <select id="teaching_type_4" name="teaching_type_4">
-                  <option value="UG">UG</option>
-                  <option value="PG">PG</option>
-                </select>
-              </td>
-              <td>
-                <input
-                  type="number"
-                  id="teaching_students_4"
-                  name="teaching_students_4"
-                />
-              </td>
-              <td>
-                <input
-                  type="date"
-                  id="teaching_join_date_4"
-                  name="teaching_join_date_4"
-                />
-              </td>
-              <td>
-                <input
-                  type="date"
-                  id="teaching_leave_date_4"
-                  name="teaching_leave_date_4"
-                />
-              </td>
-              <td>
-                <input
-                  type="number"
-                  id="teaching_duration_4"
-                  name="teaching_duration_4"
-                />
-              </td>
-            </tr>
-          </table>
-        </div>
-      </fieldset>
+        <!-- Subsection C: Teaching Experience (After PhD) -->
+        <fieldset>
+            <legend>(C) Teaching Experience (After PhD)</legend>
+            <button type="button" id="addRowBtn3C" class="btn btn-primary mb-3">Add Teaching Experience</button>
+            <div class="table-responsive">
+                <table class="table" id="teachingExpTable">
+                    <thead>
+                        <tr>
+                            <th>Position</th>
+                            <th>Employer</th>
+                            <th>Course Taught</th>
+                            <th>UG/PG</th>
+                            <th>Number of Students</th>
+                            <th>Date of Joining</th>
+                            <th>Date of Leaving</th>
+                            <th>Duration (in years)</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
 
-       <!-- Subsection D: Research Experience (Post PhD, including Post Doctoral) -->
-    <fieldset>
-        <legend>(D) Research Experience (Post PhD, including Post Doctoral)</legend>
-        <div class="table-responsive">
-            <table class="table">
-                <tr>
-                    <th>S. No.</th>
-                    <th>Position</th>
-                    <th>Institution</th>
-                    <th>Supervisor</th>
-                    <th>Date of Joining</th>
-                    <th>Date of Leaving</th>
-                    <th>Duration (in years)</th>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td><input type="text" id="research_position_0" name="research_position_0"></td>
-                    <td><input type="text" id="research_institution_0" name="research_institution_0"></td>
-                    <td><input type="text" id="research_supervisor_0" name="research_supervisor_0"></td>
-                    <td><input type="date" id="research_join_date_0" name="research_join_date_0"></td>
-                    <td><input type="date" id="research_leave_date_0" name="research_leave_date_0"></td>
-                    <td><input type="number" id="research_duration_0" name="research_duration_0"></td>
-                </tr>
-                <!-- Additional rows -->
-                <tr>
-                    <td>2</td>
-                    <td><input type="text" id="research_position_1" name="research_position_1"></td>
-                    <td><input type="text" id="research_institution_1" name="research_institution_1"></td>
-                    <td><input type="text" id="research_supervisor_1" name="research_supervisor_1"></td>
-                    <td><input type="date" id="research_join_date_1" name="research_join_date_1"></td>
-                    <td><input type="date" id="research_leave_date_1" name="research_leave_date_1"></td>
-                    <td><input type="number" id="research_duration_1" name="research_duration_1"></td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td><input type="text" id="research_position_2" name="research_position_2"></td>
-                    <td><input type="text" id="research_institution_2" name="research_institution_2"></td>
-                    <td><input type="text" id="research_supervisor_2" name="research_supervisor_2"></td>
-                    <td><input type="date" id="research_join_date_2" name="research_join_date_2"></td>
-                    <td><input type="date" id="research_leave_date_2" name="research_leave_date_2"></td>
-                    <td><input type="number" id="research_duration_2" name="research_duration_2"></td>
-                </tr>
-                <tr>
-                    <td>4</td>
-                    <td><input type="text" id="research_position_3" name="research_position_3"></td>
-                    <td><input type="text" id="research_institution_3" name="research_institution_3"></td>
-                    <td><input type="text" id="research_supervisor_3" name="research_supervisor_3"></td>
-                    <td><input type="date" id="research_join_date_3" name="research_join_date_3"></td>
-                    <td><input type="date" id="research_leave_date_3" name="research_leave_date_3"></td>
-                    <td><input type="number" id="research_duration_3" name="research_duration_3"></td>
-                </tr>
-                <tr>
-                    <td>5</td>
-                    <td><input type="text" id="research_position_4" name="research_position_4"></td>
-                    <td><input type="text" id="research_institution_4" name="research_institution_4"></td>
-                    <td><input type="text" id="research_supervisor_4" name="research_supervisor_4"></td>
-                    <td><input type="date" id="research_join_date_4" name="research_join_date_4"></td>
-                    <td><input type="date" id="research_leave_date_4" name="research_leave_date_4"></td>
-                    <td><input type="number" id="research_duration_4" name="research_duration_4"></td>
-                </tr>
-            </table>
-        </div>
-    </fieldset>
+                    </tbody>
+                </table>
+            </div>
+        </fieldset>
 
-      <!-- Subsection E: Industrial Experience -->
-    <fieldset>
-        <legend>(E) Industrial Experience</legend>
-        <div class="table-responsive">
-            <table class="table">
-                <tr>
-                    <th>S. No.</th>
-                    <th>Organisation</th>
-                    <th>Work Profile</th>
-                    <th>Date of Joining</th>
-                    <th>Date of Leaving</th>
-                    <th>Duration (in years)</th>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td><input type="text" id="industrial_organisation_0" name="industrial_organisation_0"></td>
-                    <td><input type="text" id="industrial_profile_0" name="industrial_profile_0"></td>
-                    <td><input type="date" id="industrial_join_date_0" name="industrial_join_date_0"></td>
-                    <td><input type="date" id="industrial_leave_date_0" name="industrial_leave_date_0"></td>
-                    <td><input type="number" id="industrial_duration_0" name="industrial_duration_0"></td>
-                </tr>
-                <!-- Additional rows -->
-                <tr>
-                    <td>2</td>
-                    <td><input type="text" id="industrial_organisation_1" name="industrial_organisation_1"></td>
-                    <td><input type="text" id="industrial_profile_1" name="industrial_profile_1"></td>
-                    <td><input type="date" id="industrial_join_date_1" name="industrial_join_date_1"></td>
-                    <td><input type="date" id="industrial_leave_date_1" name="industrial_leave_date_1"></td>
-                    <td><input type="number" id="industrial_duration_1" name="industrial_duration_1"></td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td><input type="text" id="industrial_organisation_2" name="industrial_organisation_2"></td>
-                    <td><input type="text" id="industrial_profile_2" name="industrial_profile_2"></td>
-                    <td><input type="date" id="industrial_join_date_2" name="industrial_join_date_2"></td>
-                    <td><input type="date" id="industrial_leave_date_2" name="industrial_leave_date_2"></td>
-                    <td><input type="number" id="industrial_duration_2" name="industrial_duration_2"></td>
-                </tr>
-                <tr>
-                    <td>4</td>
-                    <td><input type="text" id="industrial_organisation_3" name="industrial_organisation_3"></td>
-                    <td><input type="text" id="industrial_profile_3" name="industrial_profile_3"></td>
-                    <td><input type="date" id="industrial_join_date_3" name="industrial_join_date_3"></td>
-                    <td><input type="date" id="industrial_leave_date_3" name="industrial_leave_date_3"></td>
-                    <td><input type="number" id="industrial_duration_3" name="industrial_duration_3"></td>
-                </tr>
-                <tr>
-                    <td>5</td>
-                    <td><input type="text" id="industrial_organisation_4" name="industrial_organisation_4"></td>
-                    <td><input type="text" id="industrial_profile_4" name="industrial_profile_4"></td>
-                    <td><input type="date" id="industrial_join_date_4" name="industrial_join_date_4"></td>
-                    <td><input type="date" id="industrial_leave_date_4" name="industrial_leave_date_4"></td>
-                    <td><input type="number" id="industrial_duration_4" name="industrial_duration_4"></td>
-                </tr>
-            </table>
-        </div>
-    </fieldset>
+        <!-- Subsection D: Research Experience (Post PhD, including Post Doctoral) -->
+        <fieldset>
+            <legend>(D) Research Experience (Post PhD, including Post Doctoral)</legend>
+            <button type="button" id="addRowBtn3D" class="btn btn-primary mb-3">Add Research Experience</button>
+            <div class="table-responsive">
+                <table class="table" id="researchExpTable">
+                    <thead>
+                        <tr>
+                            <th>Position</th>
+                            <th>Institution</th>
+                            <th>Supervisor</th>
+                            <th>Date of Joining</th>
+                            <th>Date of Leaving</th>
+                            <th>Duration (in years)</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+        </fieldset>
+
+        <!-- Subsection E: Industrial Experience -->
+        <fieldset>
+            <legend>(E) Industrial Experience</legend>
+            <button type="button" id="addRowBtn3E" class="btn btn-primary mb-3">Add Industrial Experience</button>
+            <div class="table-responsive">
+                <table class="table" id="indExpTable">
+                    <thead>
+                        <tr>
+                            <th>Organisation</th>
+                            <th>Work Profile</th>
+                            <th>Date of Joining</th>
+                            <th>Date of Leaving</th>
+                            <th>Duration (in years)</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+        </fieldset>
     </section>
 
     <!-- Section 4: Area(s) of Specialization and Current Area(s) of Research -->
     <section>
-      <h4>4. Area(s) of Specialization and Current Area(s) of Research</h4>
-      <div class="row">
-        <div class="col-md-6">
-          <div class="mb-3">
-            <label for="area_of_specialization" class="form-label"
-              >Area(s) of Specialization:</label
-            >
-            <textarea
-              class="form-control"
-              name="area_of_specialization"
-              id="area_of_specialization"
-              rows="5"
-            ></textarea>
-          </div>
+        <h4>4. Area(s) of Specialization and Current Area(s) of Research</h4>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="mb-3">
+                    <label for="area_of_specialization" class="form-label">Area(s) of Specialization:</label>
+                    <textarea class="form-control" name="area_of_specialization" id="area_of_specialization"
+                        rows="5"></textarea>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="mb-3">
+                    <label for="area_of_research" class="form-label">Current Area(s) of Research:</label>
+                    <textarea class="form-control" name="area_of_research" id="area_of_research" rows="5"></textarea>
+                </div>
+            </div>
         </div>
-        <div class="col-md-6">
-          <div class="mb-3">
-            <label for="area_of_research" class="form-label"
-              >Current Area(s) of Research:</label
-            >
-            <textarea
-              class="form-control"
-              name="area_of_research"
-              id="area_of_research"
-              rows="5"
-            ></textarea>
-          </div>
-        </div>
-      </div>
     </section>
 
     <!-- Save and Next button -->
@@ -597,6 +172,137 @@
         <a href="{% url 'page2' %}" class="btn btn-success mx-3">Previous Page</a>
         <button type="submit" id="nextButton">Save And Next</button>
     </div>
-  </form>
-</div>
+</form>
+<script>
+    // JavaScript for dynamic addition and deletion of rows
+    document.addEventListener('DOMContentLoaded', function () {
+
+        //3B
+        const addRowBtn3B = document.getElementById('addRowBtn3B');
+        const tableBody3B = document.querySelector('#employmentHistoryTable tbody');
+
+        // Add event listener for add button
+        addRowBtn3B.addEventListener('click', function () {
+            const newRow = `
+          <tr>
+            <td><input type="text" name="employment_position_"></td>
+            <td><input type="text" name="employment_organisation_"></td>
+            <td><input type="date" name="employment_join_date_"></td>
+            <td><input type="date" name="employment_leave_date_"></td>
+            <td><input type="number" name="employment_duration_"></td>
+            <td><button type="button" class="btn btn-danger deleteRowBtn">Delete</button></td>
+        </tr>
+          `;
+            tableBody3B.insertAdjacentHTML('beforeend', newRow);
+        });
+
+        // Add event listener for delete button
+        tableBody3B.addEventListener('click', function (event) {
+            if (event.target.classList.contains('deleteRowBtn')) {
+                event.target.closest('tr').remove();
+            }
+        });
+
+        //3C
+        const addRowBtn3C = document.getElementById('addRowBtn3C');
+        const tableBody3C = document.querySelector('#teachingExpTable tbody');
+        // Add event listener for add button
+        addRowBtn3C.addEventListener('click', function () {
+            const newRow = `
+          <tr>
+              <td>
+                  <input type="text" name="teaching_position_" />
+              </td>
+              <td>
+                  <input type="text" name="teaching_employer_" />
+              </td>
+              <td>
+                  <input type="text" name="teaching_course_" />
+              </td>
+              <td>
+                  <select name="teaching_type_">
+                      <option value="UG">UG</option>
+                      <option value="PG">PG</option>
+                  </select>
+              </td>
+              <td>
+                  <input type="number" name="teaching_students_" />
+              </td>
+              <td>
+                  <input type="date" name="teaching_join_date_" />
+              </td>
+              <td>
+                  <input type="date" name="teaching_leave_date_" />
+              </td>
+              <td>
+                  <input type="number" name="teaching_duration_" />
+              </td>
+             <td><button type="button" class="btn btn-danger deleteRowBtn">Delete</button></td>
+        </tr>
+          `;
+            tableBody3C.insertAdjacentHTML('beforeend', newRow);
+        });
+
+        // Add event listener for delete button
+        tableBody3C.addEventListener('click', function (event) {
+            if (event.target.classList.contains('deleteRowBtn')) {
+                event.target.closest('tr').remove();
+            }
+        });
+
+        //3D
+        const addRowBtn3D = document.getElementById('addRowBtn3D');
+        const tableBody3D = document.querySelector('#researchExpTable tbody');
+        // Add event listener for add button
+        addRowBtn3D.addEventListener('click', function () {
+            const newRow = `
+          <tr>
+            <td><input type="text" name="research_position_"></td>
+            <td><input type="text" name="research_institution_"></td>
+            <td><input type="text" name="research_supervisor_"></td>
+            <td><input type="date" name="research_join_date_"></td>
+            <td><input type="date" name="research_leave_date_"></td>
+            <td><input type="number" name="research_duration_"></td>
+            <td><button type="button" class="btn btn-danger deleteRowBtn">Delete</button></td>
+        </tr>
+          `;
+            tableBody3D.insertAdjacentHTML('beforeend', newRow);
+        });
+
+        // Add event listener for delete button
+        tableBody3D.addEventListener('click', function (event) {
+            if (event.target.classList.contains('deleteRowBtn')) {
+                event.target.closest('tr').remove();
+            }
+        });
+
+
+        //3E
+        const addRowBtn3E = document.getElementById('addRowBtn3E');
+        const tableBody3E = document.querySelector('#indExpTable tbody');
+        // Add event listener for add button
+        addRowBtn3E.addEventListener('click', function () {
+            const newRow = `
+          <tr>
+            <td><input type="text" name="industrial_organisation_"></td>
+            <td><input type="text" name="industrial_profile_"></td>
+            <td><input type="date" name="industrial_join_date_"></td>
+            <td><input type="date" name="industrial_leave_date_"></td>
+            <td><input type="number" name="industrial_duration_"></td>
+            <td><button type="button" class="btn btn-danger deleteRowBtn">Delete</button></td>
+        </tr>
+          `;
+            tableBody3E.insertAdjacentHTML('beforeend', newRow);
+        });
+
+        // Add event listener for delete button
+        tableBody3E.addEventListener('click', function (event) {
+            if (event.target.classList.contains('deleteRowBtn')) {
+                event.target.closest('tr').remove();
+            }
+        });
+
+
+    });
+</script>
 {% endblock content %}

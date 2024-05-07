@@ -1,265 +1,205 @@
 {% extends "base_form.html" %}
 {% block title %}Page6{% endblock title %}
 {% block content %}
-<div class="box">
-    <div class="row mt-4 mx-2 ">
-        <div class="col-6">
-            <h3>Welcome Animesh Tripathy</h3>
-        </div>
-        <div class="col-5">
-            <h3>Application Number : 12345678</h3>
-        </div>
-        <div class="col-1">
-            <a href="{% url 'logout' %}" class="btn btn-success mx-3">Logout</a>
-        </div>
-    </div>
-    <hr>
+<form action="" method="post">
+    {% csrf_token %}
+    <!-- Section 13: Research Supervision -->
+    <section>
+        <h4>13. Research Supervision</h4>
 
-    <form action="" method="post">
-
-        <!-- Section 13: Research Supervision -->
-        <section>
-            <h4>13. Research Supervision</h4>
-
-            <!-- Fieldset for (A) PhD Thesis Supervision -->
-            <fieldset>
-                <legend>(A) PhD Thesis Supervision</legend>
-                <div class="table-responsive">
-                    <table class="table">
+        <!-- (A) PhD Thesis Supervision -->
+        <fieldset>
+            <legend>(A) PhD Thesis Supervision</legend>
+            <button type="button" id="addRowBtn13A" class="btn btn-primary mb-3">Add PhD Thesis Supervision</button>
+            <div class="table-responsive">
+                <table class="table" id="phdSuperTable">
+                    <thead>
                         <tr>
-                            <th>S. No.</th>
                             <th>Name of Student/Research Scholar</th>
                             <th>Title of Thesis</th>
                             <th>Role</th>
                             <th>Status</th>
                             <th>Ongoing Since/Date of Completion</th>
+                            <th>Action</th>
                         </tr>
-                        <!-- Row 1 -->
-                        <tr>
-                            <td>1</td>
-                            <td><input type="text" id="phd_name_1" name="phd_name_1"></td>
-                            <td><input type="text" id="phd_title_1" name="phd_title_1"></td>
-                            <td>
-                                <select id="phd_role_1" name="phd_role_1">
-                                    <option value="Supervisor with no Co-Supervisor">Supervisor with no Co-Supervisor</option>
-                                    <option value="Supervisor with Co-Supervisor">Supervisor with Co-Supervisor</option>
-                                    <option value="Co-Supervisor">Co-Supervisor</option>
-                                </select>
-                            </td>
-                            <td>
-                                <select id="phd_status_1" name="phd_status_1">
-                                    <option value="Ongoing">Ongoing</option>
-                                    <option value="Completed">Completed</option>
-                                </select>
-                            </td>
-                            <td><input type="date" id="phd_date_1" name="phd_date_1"></td>
-                        </tr>
-                        <!-- Row 2 -->
-                        <tr>
-                            <td>2</td>
-                            <td><input type="text" id="phd_name_2" name="phd_name_2"></td>
-                            <td><input type="text" id="phd_title_2" name="phd_title_2"></td>
-                            <td>
-                                <select id="phd_role_2" name="phd_role_2">
-                                    <option value="Supervisor with no Co-Supervisor">Supervisor with no Co-Supervisor</option>
-                                    <option value="Supervisor with Co-Supervisor">Supervisor with Co-Supervisor</option>
-                                    <option value="Co-Supervisor">Co-Supervisor</option>
-                                </select>
-                            </td>
-                            <td>
-                                <select id="phd_status_2" name="phd_status_2">
-                                    <option value="Ongoing">Ongoing</option>
-                                    <option value="Completed">Completed</option>
-                                </select>
-                            </td>
-                            <td><input type="date" id="phd_date_2" name="phd_date_2"></td>
-                        </tr>
-                        <!-- Row 3 -->
-                        <tr>
-                            <td>3</td>
-                            <td><input type="text" id="phd_name_3" name="phd_name_3"></td>
-                            <td><input type="text" id="phd_title_3" name="phd_title_3"></td>
-                            <td>
-                                <select id="phd_role_3" name="phd_role_3">
-                                    <option value="Supervisor with no Co-Supervisor">Supervisor with no Co-Supervisor</option>
-                                    <option value="Supervisor with Co-Supervisor">Supervisor with Co-Supervisor</option>
-                                    <option value="Co-Supervisor">Co-Supervisor</option>
-                                </select>
-                            </td>
-                            <td>
-                                <select id="phd_status_3" name="phd_status_3">
-                                    <option value="Ongoing">Ongoing</option>
-                                    <option value="Completed">Completed</option>
-                                </select>
-                            </td>
-                            <td><input type="date" id="phd_date_3" name="phd_date_3"></td>
-                        </tr>
-                    </table>
-                </div>
-            </fieldset>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+        </fieldset>
 
-            <!-- Fieldset for (B) M.Tech/M.E./Master's Degree -->
-            <fieldset>
-                <legend>(B) M.Tech/M.E./Master's Degree</legend>
-                <div class="table-responsive">
-                    <table class="table">
+        <!-- Fieldset for (B) M.Tech/M.E./Master's Degree -->
+        <fieldset>
+            <legend>(B) M.Tech/M.E./Master's Degree</legend>
+            <button type="button" id="addRowBtn13B" class="btn btn-primary mb-3">Add PG supervision</button>
+            <div class="table-responsive">
+                <table class="table" id="pgSuperTable">
+                    <thead>
                         <tr>
-                            <th>S. No.</th>
                             <th>Name of Student/Research Scholar</th>
                             <th>Title of Thesis</th>
                             <th>Role</th>
                             <th>Status</th>
                             <th>Ongoing Since/Date of Completion</th>
+                            <th>Action</th>
                         </tr>
-                        <!-- Row 1 -->
-                        <tr>
-                            <td>1</td>
-                            <td><input type="text" id="pg_name_1" name="pg_name_1"></td>
-                            <td><input type="text" id="pg_title_1" name="pg_title_1"></td>
-                            <td>
-                                <select id="pg_role_1" name="pg_role_1">
-                                    <option value="Supervisor with no Co-Supervisor">Supervisor with no Co-Supervisor</option>
-                                    <option value="Supervisor with Co-Supervisor">Supervisor with Co-Supervisor</option>
-                                    <option value="Co-Supervisor">Co-Supervisor</option>
-                                </select>
-                            </td>
-                            <td>
-                                <select id="pg_status_1" name="pg_status_1">
-                                    <option value="Ongoing">Ongoing</option>
-                                    <option value="Completed">Completed</option>
-                                </select>
-                            </td>
-                            <td><input type="date" id="pg_date_1" name="pg_date_1"></td>
-                        </tr>
-                        <!-- Row 2 -->
-                        <tr>
-                            <td>2</td>
-                            <td><input type="text" id="pg_name_2" name="pg_name_2"></td>
-                            <td><input type="text" id="pg_title_2" name="pg_title_2"></td>
-                            <td>
-                                <select id="pg_role_2" name="pg_role_2">
-                                    <option value="Supervisor with no Co-Supervisor">Supervisor with no Co-Supervisor</option>
-                                    <option value="Supervisor with Co-Supervisor">Supervisor with Co-Supervisor</option>
-                                    <option value="Co-Supervisor">Co-Supervisor</option>
-                                </select>
-                            </td>
-                            <td>
-                                <select id="pg_status_2" name="pg_status_2">
-                                    <option value="Ongoing">Ongoing</option>
-                                    <option value="Completed">Completed</option>
-                                </select>
-                            </td>
-                            <td><input type="date" id="pg_date_2" name="pg_date_2"></td>
-                        </tr>
-                        <!-- Row 3 -->
-                        <tr>
-                            <td>3</td>
-                            <td><input type="text" id="pg_name_3" name="pg_name_3"></td>
-                            <td><input type="text" id="pg_title_3" name="pg_title_3"></td>
-                            <td>
-                                <select id="pg_role_3" name="pg_role_3">
-                                    <option value="Supervisor with no Co-Supervisor">Supervisor with no Co-Supervisor</option>
-                                    <option value="Supervisor with Co-Supervisor">Supervisor with Co-Supervisor</option>
-                                    <option value="Co-Supervisor">Co-Supervisor</option>
-                                </select>
-                            </td>
-                            <td>
-                                <select id="pg_status_3" name="pg_status_3">
-                                    <option value="Ongoing">Ongoing</option>
-                                    <option value="Completed">Completed</option>
-                                </select>
-                            </td>
-                            <td><input type="date" id="pg_date_3" name="pg_date_3"></td>
-                        </tr>
-                    </table>
-                </div>
-            </fieldset>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+        </fieldset>
 
-            <!-- Fieldset for (C) B.Tech/B.E./Bachelor's Degree -->
-            <fieldset>
-                <legend>(C) B.Tech/B.E./Bachelor's Degree</legend>
-                <div class="table-responsive">
-                    <table class="table">
+        <!-- Fieldset for (C) B.Tech/B.E./Bachelor's Degree -->
+        <fieldset>
+            <legend>(C) B.Tech/B.E./Bachelor's Degree</legend>
+            <button type="button" id="addRowBtn13C" class="btn btn-primary mb-3">Add UG supervision</button>
+            <div class="table-responsive">
+                <table class="table" id="ugSuperTable">
+                    <thead>
                         <tr>
-                            <th>S. No.</th>
                             <th>Name of Student/Research Scholar</th>
                             <th>Title of Project</th>
                             <th>Role</th>
                             <th>Status</th>
                             <th>Ongoing Since/Date of Completion</th>
+                            <th>Action</th>
                         </tr>
-                        <!-- Row 1 -->
-                        <tr>
-                            <td>1</td>
-                            <td><input type="text" id="ug_name_1" name="ug_name_1"></td>
-                            <td><input type="text" id="ug_title_1" name="ug_title_1"></td>
-                            <td>
-                                <select id="ug_role_1" name="ug_role_1">
-                                    <option value="Supervisor with no Co-Supervisor">Supervisor with no Co-Supervisor</option>
-                                    <option value="Supervisor with Co-Supervisor">Supervisor with Co-Supervisor</option>
-                                    <option value="Co-Supervisor">Co-Supervisor</option>
-                                </select>
-                            </td>
-                            <td>
-                                <select id="ug_status_1" name="ug_status_1">
-                                    <option value="Ongoing">Ongoing</option>
-                                    <option value="Completed">Completed</option>
-                                </select>
-                            </td>
-                            <td><input type="date" id="ug_date_1" name="ug_date_1"></td>
-                        </tr>
-                        <!-- Row 2 -->
-                        <tr>
-                            <td>2</td>
-                            <td><input type="text" id="ug_name_2" name="ug_name_2"></td>
-                            <td><input type="text" id="ug_title_2" name="ug_title_2"></td>
-                            <td>
-                                <select id="ug_role_2" name="ug_role_2">
-                                    <option value="Supervisor with no Co-Supervisor">Supervisor with no Co-Supervisor</option>
-                                    <option value="Supervisor with Co-Supervisor">Supervisor with Co-Supervisor</option>
-                                    <option value="Co-Supervisor">Co-Supervisor</option>
-                                </select>
-                            </td>
-                            <td>
-                                <select id="ug_status_2" name="ug_status_2">
-                                    <option value="Ongoing">Ongoing</option>
-                                    <option value="Completed">Completed</option>
-                                </select>
-                            </td>
-                            <td><input type="date" id="ug_date_2" name="ug_date_2"></td>
-                        </tr>
-                        <!-- Row 3 -->
-                        <tr>
-                            <td>3</td>
-                            <td><input type="text" id="ug_name_3" name="ug_name_3"></td>
-                            <td><input type="text" id="ug_title_3" name="ug_title_3"></td>
-                            <td>
-                                <select id="ug_role_3" name="ug_role_3">
-                                    <option value="Supervisor with no Co-Supervisor">Supervisor with no Co-Supervisor</option>
-                                    <option value="Supervisor with Co-Supervisor">Supervisor with Co-Supervisor</option>
-                                    <option value="Co-Supervisor">Co-Supervisor</option>
-                                </select>
-                            </td>
-                            <td>
-                                <select id="ug_status_3" name="ug_status_3">
-                                    <option value="Ongoing">Ongoing</option>
-                                    <option value="Completed">Completed</option>
-                                </select>
-                            </td>
-                            <td><input type="date" id="ug_date_3" name="ug_date_3"></td>
-                        </tr>
-                    </table>
-                </div>
-            </fieldset>
-            
-        </section>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+        </fieldset>
+
+    </section>
 
 
-        <!-- Save and Next button -->
-        <div class="btn-container">
-            <a href="{% url 'page5' %}" class="btn btn-success mx-3">Previous Page</a>
-            <button type="submit" id="nextButton">Save And Next</button>
-        </div>
-    </form>
-</div> 
+    <!-- Save and Next button -->
+    <div class="btn-container">
+        <a href="{% url 'page5' %}" class="btn btn-success mx-3">Previous Page</a>
+        <button type="submit" id="nextButton">Save And Next</button>
+    </div>
+</form>
+<script>
+    // JavaScript for dynamic addition and deletion of rows
+    document.addEventListener('DOMContentLoaded', function () {
+
+        //13A
+        const addRowBtn13A = document.getElementById('addRowBtn13A');
+        const tableBody13A = document.querySelector('#phdSuperTable tbody');
+        // Add event listener for add button
+        addRowBtn13A.addEventListener('click', function () {
+            const newRow = `
+              <tr>
+                <td><input type="text" name="phd_name_"></td>
+                <td><input type="text" name="phd_title_"></td>
+                <td>
+                    <select name="phd_role_">
+                        <option value="Supervisor with no Co-Supervisor">Supervisor with no Co-Supervisor
+                        </option>
+                        <option value="Supervisor with Co-Supervisor">Supervisor with Co-Supervisor</option>
+                        <option value="Co-Supervisor">Co-Supervisor</option>
+                    </select>
+                </td>
+                <td>
+                    <select name="phd_status_">
+                        <option value="Ongoing">Ongoing</option>
+                        <option value="Completed">Completed</option>
+                    </select>
+                </td>
+                <td><input type="date" name="phd_date_"></td>
+                <td><button type="button" class="btn btn-danger deleteRowBtn">Delete</button></td>
+            </tr>
+              `;
+            tableBody13A.insertAdjacentHTML('beforeend', newRow);
+        });
+
+        // Add event listener for delete button
+        tableBody13A.addEventListener('click', function (event) {
+            if (event.target.classList.contains('deleteRowBtn')) {
+                event.target.closest('tr').remove();
+            }
+        });
+
+
+        //13B
+        const addRowBtn13B = document.getElementById('addRowBtn13B');
+        const tableBody13B = document.querySelector('#pgSuperTable tbody');
+        // Add event listener for add button
+        addRowBtn13B.addEventListener('click', function () {
+            const newRow = `
+              <tr>
+                <td><input type="text" name="pg_name_"></td>
+                <td><input type="text" name="pg_title_"></td>
+                <td>
+                    <select name="pg_role_">
+                        <option value="Supervisor with no Co-Supervisor">Supervisor with no Co-Supervisor
+                        </option>
+                        <option value="Supervisor with Co-Supervisor">Supervisor with Co-Supervisor</option>
+                        <option value="Co-Supervisor">Co-Supervisor</option>
+                    </select>
+                </td>
+                <td>
+                    <select name="pg_status_">
+                        <option value="Ongoing">Ongoing</option>
+                        <option value="Completed">Completed</option>
+                    </select>
+                </td>
+                <td><input type="date" name="pg_date_"></td>
+                <td><button type="button" class="btn btn-danger deleteRowBtn">Delete</button></td>
+            </tr>
+              `;
+            tableBody13B.insertAdjacentHTML('beforeend', newRow);
+        });
+
+        // Add event listener for delete button
+        tableBody13B.addEventListener('click', function (event) {
+            if (event.target.classList.contains('deleteRowBtn')) {
+                event.target.closest('tr').remove();
+            }
+        });
+
+
+        //13C
+        const addRowBtn13C = document.getElementById('addRowBtn13C');
+        const tableBody13C = document.querySelector('#ugSuperTable tbody');
+        // Add event listener for add button
+        addRowBtn13C.addEventListener('click', function () {
+            const newRow = `
+              <tr>
+                <td><input type="text" name="ug_name_"></td>
+                <td><input type="text" name="ug_title_"></td>
+                <td>
+                    <select name="ug_role_">
+                        <option value="Supervisor with no Co-Supervisor">Supervisor with no Co-Supervisor
+                        </option>
+                        <option value="Supervisor with Co-Supervisor">Supervisor with Co-Supervisor</option>
+                        <option value="Co-Supervisor">Co-Supervisor</option>
+                    </select>
+                </td>
+                <td>
+                    <select name="ug_status_">
+                        <option value="Ongoing">Ongoing</option>
+                        <option value="Completed">Completed</option>
+                    </select>
+                </td>
+                <td><input type="date" name="ug_date_"></td>
+                <td><button type="button" class="btn btn-danger deleteRowBtn">Delete</button></td>
+            </tr>
+              `;
+            tableBody13C.insertAdjacentHTML('beforeend', newRow);
+        });
+
+        // Add event listener for delete button
+        tableBody13C.addEventListener('click', function (event) {
+            if (event.target.classList.contains('deleteRowBtn')) {
+                event.target.closest('tr').remove();
+            }
+        });
+
+
+    });
+</script>
 {% endblock content %}
