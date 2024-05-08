@@ -1,7 +1,7 @@
 {% extends "base_form.html" %}
 {% block title %}Page4{% endblock title %}
 {% block content %}
-<form action="" method="post">
+<form action="{% url 'page4' %}" method="post">
     {% csrf_token %}
     <!-- Section 5: Summary of Publications -->
     <section>
@@ -9,47 +9,41 @@
         <fieldset>
             <div class="row">
                 <div class="col">
-                    <label for="international_journal_papers" class="w-100">No. of International Journal
-                        Papers:</label>
-                    <input type="number" id="international_journal_papers" name="international_journal_papers" required>
+                    {{ page4_form.international_journal_papers.label_tag }}
+                    {{ page4_form.international_journal_papers }}
                 </div>
                 <div class="col">
-                    <label for="national_journal_papers" class="w-100">No. of National Journal
-                        Papers:</label>
-                    <input type="number" id="national_journal_papers" name="national_journal_papers" required>
+                    {{ page4_form.national_journal_papers.label_tag }}
+                    {{ page4_form.national_journal_papers }}
                 </div>
             </div>
 
             <div class="row">
                 <div class="col">
-                    <label for="international_conference_papers" class="w-100">No. of International
-                        Conference
-                        Papers:</label>
-                    <input type="number" id="international_conference_papers" name="international_conference_papers"
-                        required>
+                    {{ page4_form.international_conference_papers.label_tag }}
+                    {{ page4_form.international_conference_papers }}
                 </div>
                 <div class="col">
-                    <label for="national_conference_papers" class="w-100">No. of National Conference
-                        Papers:</label>
-                    <input type="number" id="national_conference_papers" name="national_conference_papers" required>
+                    {{ page4_form.national_conference_papers.label_tag }}
+                    {{ page4_form.national_conference_papers }}
                 </div>
             </div>
 
             <div class="row">
                 <div class="col">
-                    <label for="patents" class="w-100">No. of Patent(s) (filed/published/granted):</label>
-                    <input type="number" id="patents" name="patents" required>
+                    {{ page4_form.patents.label_tag }}
+                    {{ page4_form.patents }}
                 </div>
                 <div class="col">
-                    <label for="books" class="w-100">No. of Book(s):</label>
-                    <input type="number" id="books" name="books" required>
+                    {{ page4_form.books.label_tag }}
+                    {{ page4_form.books }}
                 </div>
             </div>
 
             <div class="row">
                 <div class="col-6">
-                    <label for="book_chapters" class="w-100">No. of Book Chapter(s):</label>
-                    <input type="number" id="book_chapters" name="book_chapters" required>
+                    {{ page4_form.book_chapters.label_tag }}
+                    {{ page4_form.book_chapters }}
                 </div>
             </div>
         </fieldset>
@@ -158,10 +152,10 @@
         <h4>8. Google Scholar Link</h4>
         <div class="row">
             <div class="col-2">
-                <label for="google_scholar_link" class="w-100">Google Scholar Link:</label>
+                {{ page4_form.google_scholar_link.label_tag }}
             </div>
             <div class="col-10">
-                <input type="text" id="google_scholar_link" name="google_scholar_link" required>
+                {{ page4_form.google_scholar_link }}
             </div>
         </div>
     </section>

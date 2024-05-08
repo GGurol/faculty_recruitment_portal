@@ -1,19 +1,20 @@
 {% extends "base_form.html" %}
 {% block title %}Page8{% endblock title %}
 {% block content %}
-<form action="" method="POST" enctype="multipart/form-data">
+<form action="{% url 'page8' %}" method="POST" enctype="multipart/form-data">
     {% csrf_token %}
     <section>
         <fieldset>
             <legend>20 Reprints of 5 Best Research Papers *</legend>
             <div class="mb-4">
-                <input type="file" name="research_papers" accept=".pdf" id="research_papers" class="form-control">
-                <span>Update 5 Best Research Papers </span> 
-                <button type="button" onclick="viewUploadedFile('research_papers')" class="btn btn-primary mt-2">View Uploaded File</button>
+                {{ form.research_papers.errors }}
+                {{ form.research_papers.label_tag }}
+                {{ form.research_papers }}<br>
+                {% comment %} <button type="button" onclick="viewUploadedFile('research_papers')" class="btn btn-primary mt-2">View Uploaded File</button> {% endcomment %}
             </div>
         </fieldset>
     </section>
-   
+
     <section>
         <fieldset>
             <legend>21. Check List of the documents attached with the online application *</legend>
@@ -21,59 +22,78 @@
             <div class="mb-4">
                 <ul class="list-unstyled">
                     <li>
-                        <input type="file" name="phd_certificate" accept=".pdf" id="phd_certificate" class="form-control">
-                        <button type="button" onclick="viewUploadedFile('phd_certificate')" class="btn btn-primary mt-2">View Uploaded File</button>
+                        {{ form.phd_certificate.errors }}
+                        {{ form.phd_certificate.label_tag }}
+                        {{ form.phd_certificate }}<br>
+                        {% comment %} <button type="button" onclick="viewUploadedFile('phd_certificate')" class="btn btn-primary mt-2">View Uploaded File</button> {% endcomment %}
                         Update PHD Certificate
-                    </li> <hr>
+                    </li>
                     <li>
-                        <input type="file" name="pg_documents" accept=".pdf" id="pg_documents" class="form-control">
-                        <button type="button" onclick="viewUploadedFile('pg_documents')" class="btn btn-primary mt-2">View Uploaded File</button>
+                        {{ form.pg_documents.errors }}
+                        {{ form.pg_documents.label_tag }}
+                        {{ form.pg_documents }}<br>
+                        {% comment %} <button type="button" onclick="viewUploadedFile('pg_documents')" class="btn btn-primary mt-2">View Uploaded File</button> {% endcomment %}
                         Update PG Documents(Marksheets and Degree certificate)
-                    </li> <hr>
+                    </li>
                     <li>
-                        <input type="file" name="ug_documents" accept=".pdf" id="ug_documents" class="form-control">
-                        <button type="button" onclick="viewUploadedFile('ug_documents')" class="btn btn-primary mt-2">View Uploaded File</button>
+                        {{ form.ug_documents.errors }}
+                        {{ form.ug_documents.label_tag }}
+                        {{ form.ug_documents }}<br>
+                        {% comment %} <button type="button" onclick="viewUploadedFile('ug_documents')" class="btn btn-primary mt-2">View Uploaded File</button> {% endcomment %}
                         Update UG Documents(Marksheets and Degree certificate)
-                    </li> <hr>
+                    </li>
                     <li>
-                        <input type="file" name="12th_certificate" accept=".pdf" id="12th_certificate" class="form-control">
-                        <button type="button" onclick="viewUploadedFile('12th_certificate')" class="btn btn-primary mt-2">View Uploaded File</button>
+                        {{ form.certificate_12th.errors }}
+                        {{ form.certificate_12th.label_tag }}
+                        {{ form.certificate_12th }}<br>
+                        {% comment %} <button type="button" onclick="viewUploadedFile('certificate_12th')" class="btn btn-primary mt-2">View Uploaded File</button> {% endcomment %}
                         Update 12th/HSC/Diploma/Marksheet(s) and passing certificate
-                    </li> <hr>
+                    </li>
                     <li>
-                        <input type="file" name="10th_certificate" accept=".pdf" id="10th_certificate" class="form-control">
-                        <button type="button" onclick="viewUploadedFile('10th_certificate')" class="btn btn-primary mt-2">View Uploaded File</button>
+                        {{ form.certificate_10th.errors }}
+                        {{ form.certificate_10th.label_tag }}
+                        {{ form.certificate_10th }}<br>
+                        {% comment %} <button type="button" onclick="viewUploadedFile('certificate_10th')" class="btn btn-primary mt-2">View Uploaded File</button> {% endcomment %}
                         Update 10th/SSC Documents/Marksheets
-                    </li> <hr>
+                    </li>
                     <li>
-                        <input type="file" name="pay_slip" accept=".pdf" id="pay_slip" class="form-control">
-                        <button type="button" onclick="viewUploadedFile('pay_slip')" class="btn btn-primary mt-2">View Uploaded File</button>
+                        {{ form.pay_slip.errors }}
+                        {{ form.pay_slip.label_tag }}
+                        {{ form.pay_slip }}<br>
+                        {% comment %} <button type="button" onclick="viewUploadedFile('pay_slip')" class="btn btn-primary mt-2">View Uploaded File</button> {% endcomment %}
                         Update Pay Slip
-                    </li> <hr>
+                    </li>
                     <li>
-                        <input type="file" name="noc_undertaking" accept=".pdf" id="noc_undertaking" class="form-control">
-                        <button type="button" onclick="viewUploadedFile('noc_undertaking')" class="btn btn-primary mt-2">View Uploaded File</button>
+                        {{ form.noc_undertaking.errors }}
+                        {{ form.noc_undertaking.label_tag }}
+                        {{ form.noc_undertaking }}<br>
+                        {% comment %} <button type="button" onclick="viewUploadedFile('noc_undertaking')" class="btn btn-primary mt-2">View Uploaded File</button> {% endcomment %}
                         NOC or Undertaking
-                    </li> <hr>
+                    </li>
                     <li>
-                        <input type="file" name="post_phd_experience" accept=".pdf" id="post_phd_experience" class="form-control">
-                        <button type="button" onclick="viewUploadedFile('post_phd_experience')" class="btn btn-primary mt-2">View Uploaded File</button>
+                        {{ form.post_phd_experience.errors }}
+                        {{ form.post_phd_experience.label_tag }}
+                        {{ form.post_phd_experience }}<br>
+                        {% comment %} <button type="button" onclick="viewUploadedFile('post_phd_experience')" class="btn btn-primary mt-2">View Uploaded File</button> {% endcomment %}
                         Post PhD Experience Certificate/All Experience Certificates/Last Pay slip/
-                    </li> <hr>
+                    </li>
                     <li>
-                        <input type="file" name="other_documents" accept=".pdf" id="other_documents" class="form-control">
-                        <button type="button" onclick="viewUploadedFile('other_documents')" class="btn btn-primary mt-2">View Uploaded File</button>
+                        {{ form.other_documents.errors }}
+                        {{ form.other_documents.label_tag }}
+                        {{ form.other_documents }} <br>
+                        {% comment %} <button type="button" onclick="viewUploadedFile('other_documents')" class="btn btn-primary mt-2">View Uploaded File</button> {% endcomment %}
                         Upload any other relevant document in a single PDF (For example award certificate, experience certificate etc) < 1MB.
-                    </li> <hr>
+                    </li>
                 </ul>
                 <hr>
                 <div class="mb-4">
                     <h2>Upload your Signature in JPG only (image)</h2>
-                    <input type="file" name="signature" accept="image/jpeg" id="signature" class="form-control">
-                    <button type="button" onclick="viewUploadedFile('signature')" class="btn btn-primary mt-2">View Uploaded File</button>
+                    {{ form.signature.errors }}
+                    {{ form.signature.label_tag }}
+                    {{ form.signature }}<br>
+                    {% comment %} <button type="button" onclick="viewUploadedFile('signature')" class="btn btn-primary mt-2">View Uploaded File</button> {% endcomment %}
                 </div>
             </div>
-    
         </fieldset>
     </section>
 
@@ -147,7 +167,7 @@
                     </select>
                 </td>
                 <td><input type="text" name="referee_organisation_"></td>
-                <td><input type="emai" name="referee_email_"></td>
+                <td><input type="email" name="referee_email_"></td>
                 <td><input type="text" name="referee_mobile_"></td>
                 <td><button type="button" class="btn btn-danger deleteRowBtn">Delete</button></td>
             </tr>
@@ -166,4 +186,3 @@
 </script>
 
 {% endblock content %}
-   

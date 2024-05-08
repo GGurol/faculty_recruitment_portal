@@ -1,7 +1,7 @@
 {% extends "base_form.html" %}
 {% block title %}Page7{% endblock title %}
 {% block content %}
-<form action="" method="POST">
+<form action="{% url 'page7' %}" method="POST">
     {% csrf_token %}
     <div class="row">
         <div class="col-12">

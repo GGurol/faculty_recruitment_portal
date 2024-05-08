@@ -1,7 +1,7 @@
 {% extends "base_form.html" %}
 {% block title %}Page5{% endblock title %}
 {% block content %}
-<form action="" method="post">
+<form action="{% url 'page5' %}" method="post">
     {% csrf_token %}
     <!-- Section 9: Membership of Professional Societies -->
     <section>

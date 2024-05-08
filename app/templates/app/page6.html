@@ -1,7 +1,7 @@
 {% extends "base_form.html" %}
 {% block title %}Page6{% endblock title %}
 {% block content %}
-<form action="" method="post">
+<form action="{% url 'page6' %}" method="post">
     {% csrf_token %}
     <!-- Section 13: Research Supervision -->
     <section>

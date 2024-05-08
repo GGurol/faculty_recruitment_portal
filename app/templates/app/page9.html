@@ -1,7 +1,7 @@
 {% extends "base_form.html" %}
 {% block title %}Page9{% endblock title %}
 {% block content %}
-<form action="" method="POST">
+<form action="{% url 'page9' %}" method="POST">
     {% csrf_token %}
     <section>
         <fieldset>
@@ -10,14 +10,9 @@
                 and particulars mentioned in the advertisement and this application form. 
                 I further declare that all the entries along with the attachments uploaded in this form are true 
                 to the best of my knowledge and belief.</p>
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="declarationCheckbox" required>
-                <label class="form-check-label w-75" for="declarationCheckbox">
-                    I agree to the above declaration
-                </label>
-            </div>
+            {{ form.as_p }}
             <br>
-            <p>Note: The form can be edited till the cutoff date of the rolling advertisment.</p>
+            <p>Note: The form can be edited till the cutoff date of the rolling advertisement.</p>
         </fieldset>
     </section>
 

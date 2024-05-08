@@ -43,3 +43,87 @@ class PageForm1(forms.ModelForm):
             'dob': forms.DateInput(attrs={'type': 'date'}),
             # Add more fields as needed
         }
+
+#Page 2 form
+from .models import PageModel2
+
+class PageForm2(forms.ModelForm):
+    def __init__(self, *args, **kwargs):
+        super(PageForm2, self).__init__(*args, **kwargs)
+        self.fields['college_class'].widget.attrs['readonly'] = True
+        self.fields['college_class'].initial = "12th/HSC/Diploma"
+        self.fields['school_class'].widget.attrs['readonly'] = True
+        self.fields['school_class'].initial = "10th"
+
+    class Meta:
+        model = PageModel2
+        exclude = ['user']  # Exclude user field since we handle it in the view
+        widgets = {
+            'phd_defence_date': forms.DateInput(attrs={'type': 'date'}),
+            'phd_award_date': forms.DateInput(attrs={'type': 'date'}),
+            'pg_completion_year': forms.DateInput(attrs={'type': 'date'}),
+            'ug_completion_year': forms.DateInput(attrs={'type': 'date'}),
+        }
+
+#Page 3 form
+from .models import PageModel3
+
+class PageForm3(forms.ModelForm):
+    class Meta:
+        model = PageModel3
+        exclude = ['user']
+        widgets = {
+            'joining_date': forms.DateInput(attrs={'type': 'date'}),
+            'leaving_date': forms.DateInput(attrs={'type': 'date'}),
+        }
+
+#Page 4 form
+from .models import PageModel4
+
+class PageForm4(forms.ModelForm):
+    class Meta:
+        model = PageModel4
+        fields = ['international_journal_papers', 'national_journal_papers', 'international_conference_papers',
+                  'national_conference_papers', 'patents', 'books', 'book_chapters', 'google_scholar_link']
+        
+# Page 5 Form
+from .models import PageModel5
+
+class PageForm5(forms.ModelForm):
+    class Meta:
+        model = PageModel5
+        exclude = ['user'] 
+
+# Page 6 Form
+from .models import PageModel6
+
+class PageForm6(forms.ModelForm):
+    class Meta:
+        model = PageModel6
+        exclude = ['user'] 
+
+
+#Page 7 form
+from .models import PageModel7
+
+class PageForm7(forms.ModelForm):
+    class Meta:
+        model = PageModel7
+        exclude = ['user']
+
+
+#Page 8 form
+from .models import PageModel8
+
+class PageForm8(forms.ModelForm):
+    class Meta:
+        model = PageModel8
+        exclude = ['user']
+
+#page 9 form
+from .models import PageModel9
+
+class PageForm9(forms.ModelForm):
+    class Meta:
+        model = PageModel9
+        fields = ['declaration_agreed']

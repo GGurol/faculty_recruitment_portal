@@ -1,7 +1,8 @@
 {% extends "base_form.html" %}
 {% block title %}Page3{% endblock title %}
 {% block content %}
-<form action="" method="post">
+<form action="{% url 'page3' %}" method="post">
+    {% csrf_token %}
     <!-- Section 3: Employment Details -->
     <section>
         <h4>3. Employment Details</h4>
@@ -13,40 +14,46 @@
             <div class="row">
                 <div class="col">
                     <label for="position">Position:</label>
-                    <input type="text" id="position" name="position" />
+                    {{ page3_form.position.errors }}
+                    <input type="text" id="position" name="position" value="{{ page3_form.position.value }}">
                 </div>
                 <div class="col">
                     <label for="organisation">Organisation/Institution:</label>
-                    <input type="text" id="organisation" name="organisation" />
+                    {{ page3_form.organisation.errors }}
+                    <input type="text" id="organisation" name="organisation" value="{{ page3_form.organisation.value }}">
                 </div>
             </div>
 
             <div class="row">
                 <div class="col">
                     <label for="status">Status:</label>
+                    {{ page3_form.status.errors }}
                     <select id="status" name="status">
-                        <option value="Central Govt.">Central Govt.</option>
-                        <option value="State Govt.">State Govt.</option>
-                        <option value="Private">Private</option>
-                        <option value="Quasi Govt.">Quasi Govt.</option>
-                        <option value="Self Employeed">Self Employeed</option>
-                        <option value="Others">Others</option>
+                        <option value="Central Govt." {% if page3_form.status.value == "Central Govt." %} selected {% endif %}>Central Govt.</option>
+                        <option value="State Govt." {% if page3_form.status.value == "State Govt." %} selected {% endif %}>State Govt.</option>
+                        <option value="Private" {% if page3_form.status.value == "Private" %} selected {% endif %}>Private</option>
+                        <option value="Quasi Govt." {% if page3_form.status.value == "Quasi Govt." %} selected {% endif %}>Quasi Govt.</option>
+                        <option value="Self Employed" {% if page3_form.status.value == "Self Employed" %} selected {% endif %}>Self Employed</option>
+                        <option value="Others" {% if page3_form.status.value == "Others" %} selected {% endif %}>Others</option>
                     </select>
                 </div>
                 <div class="col">
                     <label for="joiningDate">Date of Joining:</label>
-                    <input type="date" id="joiningDate" name="joiningDate" />
+                    {{ page3_form.joining_date.errors }}
+                    <input type="date" id="joiningDate" name="joining_date" value="{{ page3_form.joining_date.value }}">
                 </div>
             </div>
 
             <div class="row">
                 <div class="col">
                     <label for="leavingDate">Date of Leaving:</label>
-                    <input type="date" id="leavingDate" name="leavingDate" />
+                    {{ page3_form.leaving_date.errors }}
+                    <input type="date" id="leavingDate" name="leaving_date" value="{{ page3_form.leaving_date.value }}">
                 </div>
                 <div class="col">
                     <label for="duration">Duration (in years):</label>
-                    <input type="number" id="duration" name="duration" />
+                    {{ page3_form.duration.errors }}
+                    <input type="number" id="duration" name="duration" value="{{ page3_form.duration.value }}">
                 </div>
             </div>
         </fieldset>
@@ -154,14 +161,15 @@
             <div class="col-md-6">
                 <div class="mb-3">
                     <label for="area_of_specialization" class="form-label">Area(s) of Specialization:</label>
-                    <textarea class="form-control" name="area_of_specialization" id="area_of_specialization"
-                        rows="5"></textarea>
+                    {{ page3_form.area_of_specialization.errors }}
+                    <textarea class="form-control" name="area_of_specialization" id="area_of_specialization" rows="5">{{ page3_form.area_of_specialization.value }}</textarea>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="mb-3">
                     <label for="area_of_research" class="form-label">Current Area(s) of Research:</label>
-                    <textarea class="form-control" name="area_of_research" id="area_of_research" rows="5"></textarea>
+                    {{ page3_form.area_of_research.errors }}
+                    <textarea class="form-control" name="area_of_research" id="area_of_research" rows="5">{{ page3_form.area_of_research.value }}</textarea>
                 </div>
             </div>
         </div>

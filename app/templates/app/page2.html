@@ -1,209 +1,223 @@
 {% extends "base_form.html" %}
 {% block title %}Page2{% endblock title %}
 {% block content %}
-<div class="box">
-    <div class="row mt-4 mx-2">
-        <div class="col-6">
-            <h3>Welcome Animesh Tripathy</h3>
-        </div>
-        <div class="col-5">
-            <h3>Application Number : 12345678</h3>
-        </div>
-        <div class="col-1">
-            <a href="{% url 'logout' %}" class="btn btn-success mx-3">Logout</a>
-        </div>
-    </div>
-    <hr>
-    <form action="" method="post">
-        {% csrf_token %}
+<form action="{% url 'page2' %}" method="post">
+    {% csrf_token %}
 
-        <!-- Section 2: Educational Qualification -->
-        <section>
-            <h4>2. Educational Qualifications</h4>
+    <!-- Section 2: Educational Qualification -->
+    <section>
+        <h4>2. Educational Qualifications</h4>
 
-            <!-- Subsection A: Details of PhD -->
-            <fieldset>
-                <legend>(A) Details of PhD</legend>
-                <div class="row">
-                    <div class="col">
-                        <label for="phd_university">University/Institute:</label>
-                        <input type="text" id="phd_university" name="phd_university">
-                    </div>
-                    <div class="col">
-                        <label for="phd_department">Department:</label>
-                        <input type="text" id="phd_department" name="phd_department">
-                    </div>
+        <!-- Subsection A: Details of PhD -->
+        <fieldset>
+            <legend>(A) Details of PhD</legend>
+            <div class="row">
+                <div class="col">
+                    <label for="phd_university">University/Institute:</label>
+                    {{ page2_form.phd_university.errors }}
+                    {{ page2_form.phd_university }}
                 </div>
-
-                <div class="row">
-                    <div class="col">
-                        <label for="phd_supervisor">Name of PhD Supervisor:</label>
-                        <input type="text" id="phd_supervisor" name="phd_supervisor">
-                    </div>
-                    <div class="col">
-                        <label for="phd_join_year">Year of joining:</label>
-                        <input type="text" id="phd_join_year" name="phd_join_year">
-                    </div>
+                <div class="col">
+                    <label for="phd_department">Department:</label>
+                    {{ page2_form.phd_department.errors }}
+                    {{ page2_form.phd_department }}
                 </div>
+            </div>
 
-                <div class="row">
-                    <div class="col">
-                        <label for="phd_defence_date">Date of Successful Thesis Defence:</label>
-                        <input type="date" id="phd_defence_date" name="phd_defence_date">
-                    </div>
-                    <div class="col">
-                        <label for="phd_award_date">Date of Award:</label>
-                        <input type="date" id="phd_award_date" name="phd_award_date">
-                    </div>
+            <div class="row">
+                <div class="col">
+                    <label for="phd_supervisor">Name of PhD Supervisor:</label>
+                    {{ page2_form.phd_supervisor.errors }}
+                    {{ page2_form.phd_supervisor }}
                 </div>
-
-                <div class="row">
-                    <div class="col-6">
-                        <label for="phd_thesis_title">Title of PhD Thesis:</label>
-                        <input type="text" id="phd_thesis_title" name="phd_thesis_title">
-                    </div>
+                <div class="col">
+                    <label for="phd_join_year">Year of joining:</label>
+                    {{ page2_form.phd_join_year.errors }}
+                    {{ page2_form.phd_join_year }}
                 </div>
+            </div>
 
-            </fieldset>
-
-            <!-- Subsection B: Academic Details - M. Tech./ M.E./ PG Details -->
-            <fieldset>
-                <legend>(B) Academic Details - M. Tech./ M.E./ PG Details</legend>
-                <div class="row">
-                    <div class="col">
-                        <label for="pg_degree">Degree/Certificate:</label>
-                        <input type="text" id="pg_degree" name="pg_degree">
-                    </div>
-                    <div class="col">
-                        <label for="pg_university">University/Institute:</label>
-                        <input type="text" id="pg_university" name="pg_university">
-                    </div>
+            <div class="row">
+                <div class="col">
+                    <label for="phd_defence_date">Date of Successful Thesis Defence:</label>
+                    {{ page2_form.phd_defence_date.errors }}
+                    {{ page2_form.phd_defence_date }}
                 </div>
-
-                <div class="row">
-                    <div class="col">
-                        <label for="pg_branch">Branch/Stream:</label>
-                        <input type="text" id="pg_branch" name="pg_branch">
-                    </div>
-                    <div class="col">
-                        <label for="pg_join_year">Year of Joining:</label>
-                        <input type="date" id="pg_join_year" name="pg_join_year">
-                    </div>
+                <div class="col">
+                    <label for="phd_award_date">Date of Award:</label>
+                    {{ page2_form.phd_award_date.errors }}
+                    {{ page2_form.phd_award_date }}
                 </div>
+            </div>
 
-                <div class="row">
-                    <div class="col">
-                        <label for="pg_completion_year">Year of Completion:</label>
-                        <input type="date" id="pg_completion_year" name="pg_completion_year">
-                    </div>
-                    <div class="col">
-                        <label for="pg_duration">Duration (in years):</label>
-                        <input type="number" id="pg_duration" name="pg_duration">
-                    </div>
+            <div class="row">
+                <div class="col-6">
+                    <label for="phd_thesis_title">Title of PhD Thesis:</label>
+                    {{ page2_form.phd_thesis_title.errors }}
+                    {{ page2_form.phd_thesis_title }}
                 </div>
+            </div>
+        </fieldset>
 
-                <div class="row">
-                    <div class="col">
-                        <label for="pg_percentage_cgpa">Percentage/ CGPA:</label>
-                        <input type="text" id="pg_percentage_cgpa" name="pg_percentage_cgpa">
-                    </div>
-                    <div class="col">
-                        <label for="pg_division">Division/Class:</label>
-                        <input type="text" id="pg_division" name="pg_division">
-                    </div>
+        <!-- Subsection B: Academic Details - M. Tech./ M.E./ PG Details -->
+        <fieldset>
+            <legend>(B) Academic Details - M. Tech./ M.E./ PG Details</legend>
+            <div class="row">
+                <div class="col">
+                    <label for="pg_degree">Degree/Certificate:</label>
+                    {{ page2_form.pg_degree.errors }}
+                    {{ page2_form.pg_degree }}
                 </div>
-            </fieldset>
-
-            <!-- Subsection C: Academic Details - B. Tech /B.E. / UG Details -->
-            <fieldset>
-                <legend>(C) Academic Details - B. Tech /B.E. / UG Details</legend>
-
-                <div class="row">
-                    <div class="col">
-                        <label for="ug_degree">Degree/Certificate:</label>
-                        <input type="text" id="ug_degree" name="ug_degree">
-                    </div>
-                    <div class="col">
-                        <label for="ug_university">University/Institute:</label>
-                        <input type="text" id="ug_university" name="ug_university">
-                    </div>
+                <div class="col">
+                    <label for="pg_university">University/Institute:</label>
+                    {{ page2_form.pg_university.errors }}
+                    {{ page2_form.pg_university }}
                 </div>
+            </div>
 
-                <div class="row">
-                    <div class="col">
-                        <label for="ug_branch">Branch/Stream:</label>
-                        <input type="text" id="ug_branch" name="ug_branch">
-                    </div>
-                    <div class="col">
-                        <label for="ug_join_year">Year of Joining:</label>
-                        <input type="date" id="ug_join_year" name="ug_join_year">
-                    </div>
+            <div class="row">
+                <div class="col">
+                    <label for="pg_branch">Branch/Stream:</label>
+                    {{ page2_form.pg_branch.errors }}
+                    {{ page2_form.pg_branch }}
                 </div>
-
-                <div class="row">
-                    <div class="col">
-                        <label for="ug_completion_year">Year of Completion:</label>
-                        <input type="date" id="ug_completion_year" name="ug_completion_year">
-                    </div>
-                    <div class="col">
-                        <label for="ug_duration">Duration (in years):</label>
-                        <input type="number" id="ug_duration" name="ug_duration">
-                    </div>
+                <div class="col">
+                    <label for="pg_join_year">Year of Joining:</label>
+                    {{ page2_form.pg_join_year.errors }}
+                    {{ page2_form.pg_join_year }}
                 </div>
+            </div>
 
-                <div class="row">
-                    <div class="col">
-                        <label for="ug_percentage_cgpa">Percentage/ CGPA:</label>
-                        <input type="text" id="ug_percentage_cgpa" name="ug_percentage_cgpa">
-                    </div>
-                    <div class="col">
-                        <label for="ug_division">Division/Class:</label>
-                        <input type="text" id="ug_division" name="ug_division">
-                    </div>
+            <div class="row">
+                <div class="col">
+                    <label for="pg_completion_year">Year of Completion:</label>
+                    {{ page2_form.pg_completion_year.errors }}
+                    {{ page2_form.pg_completion_year }}
                 </div>
-            </fieldset>
-
-            <!-- Subsection D: Academic Details - School -->
-            <fieldset>
-                <legend> (D) Academic Details - School</legend>
-                <div class="table-responsive">
-                    <table class="table">
-                        <!-- Table format form for School details -->
-                        <tr>
-                            <th>S. No.</th>
-                            <th>10th/12th/HSC/Diploma</th>
-                            <th>School</th>
-                            <th>Year of Passing</th>
-                            <th>Percentage/Grade</th>
-                            <th>Division/Class</th>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td><input type="text" id="college_class" name="college_class"
-                                    value="12th/HSC/Diploma" readonly></td>
-                            <td><input type="text" id="college_name" name="college_name"></td>
-                            <td><input type="text" id="college_passing_year" name="college_passing_year"></td>
-                            <td><input type="text" id="college_percentage" name="college_percentage"></td>
-                            <td><input type="text" id="college_division" name="college_division"></td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td><input type="text" id="school_class" name="school_class" value="10th" readonly>
-                            </td>
-                            <td><input type="text" id="school_name" name="school_name"></td>
-                            <td><input type="text" id="school_passing_year" name="school_passing_year"></td>
-                            <td><input type="text" id="school_percentage" name="school_percentage"></td>
-                            <td><input type="text" id="school_division" name="school_division"></td>
-                        </tr>
-                    </table>
+                <div class="col">
+                    <label for="pg_duration">Duration (in years):</label>
+                    {{ page2_form.pg_duration.errors }}
+                    {{ page2_form.pg_duration }}
                 </div>
-            </fieldset>
+            </div>
 
+            <div class="row">
+                <div class="col">
+                    <label for="pg_percentage_cgpa">Percentage/ CGPA:</label>
+                    {{ page2_form.pg_percentage_cgpa.errors }}
+                    {{ page2_form.pg_percentage_cgpa }}
+                </div>
+                <div class="col">
+                    <label for="pg_division">Division/Class:</label>
+                    {{ page2_form.pg_division.errors }}
+                    {{ page2_form.pg_division }}
+                </div>
+            </div>
+        </fieldset>
 
-            <!-- Subsection E: Additional Educational Qualification -->
-            <fieldset>
-                <legend> (E) Additional Educational Qualification (If any)</legend>
-                <!-- Add button for Additional Educational Qualification -->
+        <!-- Subsection C: Academic Details - B. Tech /B.E. / UG Details -->
+        <fieldset>
+            <legend>(C) Academic Details - B. Tech /B.E. / UG Details</legend>
+
+            <div class="row">
+                <div class="col">
+                    <label for="ug_degree">Degree/Certificate:</label>
+                    {{ page2_form.ug_degree.errors }}
+                    {{ page2_form.ug_degree }}
+                </div>
+                <div class="col">
+                    <label for="ug_university">University/Institute:</label>
+                    {{ page2_form.ug_university.errors }}
+                    {{ page2_form.ug_university }}
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <label for="ug_branch">Branch/Stream:</label>
+                    {{ page2_form.ug_branch.errors }}
+                    {{ page2_form.ug_branch }}
+                </div>
+                <div class="col">
+                    <label for="ug_join_year">Year of Joining:</label>
+                    {{ page2_form.ug_join_year.errors }}
+                    {{ page2_form.ug_join_year }}
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <label for="ug_completion_year">Year of Completion:</label>
+                    {{ page2_form.ug_completion_year.errors }}
+                    {{ page2_form.ug_completion_year }}
+                </div>
+                <div class="col">
+                    <label for="ug_duration">Duration (in years):</label>
+                    {{ page2_form.ug_duration.errors }}
+                    {{ page2_form.ug_duration }}
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <label for="ug_percentage_cgpa">Percentage/ CGPA:</label>
+                    {{ page2_form.ug_percentage_cgpa.errors }}
+                    {{ page2_form.ug_percentage_cgpa }}
+                </div>
+                <div class="col">
+                    <label for="ug_division">Division/Class:</label>
+                    {{ page2_form.ug_division.errors }}
+                    {{ page2_form.ug_division }}
+                </div>
+            </div>
+        </fieldset>
+
+        <!-- Subsection D: Academic Details - School -->
+        <fieldset>
+            <legend>(D) Academic Details - School</legend>
+            <div class="table-responsive">
+                <table class="table">
+                    <!-- Table format form for School details -->
+                    <tr>
+                        <th>10th/12th/HSC/Diploma</th>
+                        <th>School</th>
+                        <th>Year of Passing</th>
+                        <th>Percentage/Grade</th>
+                        <th>Division/Class</th>
+                    </tr>
+                    <tr>
+                        <td>{{ page2_form.college_class.errors }}
+                            {{ page2_form.college_class }}</td>
+                        <td>{{ page2_form.college_name.errors }}
+                            {{ page2_form.college_name }}</td>
+                        <td>{{ page2_form.college_passing_year.errors }}
+                            {{ page2_form.college_passing_year }}</td>
+                        <td>{{ page2_form.college_percentage.errors }}
+                            {{ page2_form.college_percentage}}</td>
+                        <td>{{ page2_form.college_division.errors }}
+                            {{ page2_form.college_division }}</td>
+                    </tr>
+                    <tr>
+                        <td>{{ page2_form.school_class.errors }}
+                            {{ page2_form.school_class }}</td>
+                        <td>{{ page2_form.school_name.errors }}
+                            {{ page2_form.school_name }}</td>
+                        <td>{{ page2_form.school_passing_year.errors }}
+                            {{ page2_form.school_passing_year }}</td>
+                        <td>{{ page2_form.school_percentage.errors }}
+                            {{ page2_form.school_percentage}}</td>
+                        <td>{{ page2_form.school_division.errors }}
+                            {{ page2_form.school_division }}</td>
+                    </tr>
+                   
+                </table>
+            </div>
+        </fieldset>
+
+        <!-- Subsection E: Additional Educational Qualification -->
+        <fieldset>
+            <legend> (E) Additional Educational Qualification (If any)</legend>
+            <!-- Add button for Additional Educational Qualification -->
             <button type="button" id="addRowBtn" class="btn btn-primary mb-3">Add Qualification</button>
 
             <!-- Additional Educational Qualification table -->
@@ -228,18 +242,17 @@
                 </table>
             </div>
 
-               
-            </fieldset>
-            
-        </section>
 
-        <!-- Save and Next button -->
-        <div class="btn-container">
-            <a href="{% url 'page1' %}" class="btn btn-success mx-3">Previous Page</a>
-            <button type="submit" class="btn btn-primary">Save And Next</button>
-        </div>
-    </form>
-</div>
+        </fieldset>
+
+    </section>
+
+    <!-- Save and Next button -->
+    <div class="btn-container">
+        <a href="{% url 'page1' %}" class="btn btn-success mx-3">Previous Page</a>
+        <button type="submit" class="btn btn-primary">Save And Next</button>
+    </div>
+</form>
 
 <script>
     // JavaScript for dynamic addition and deletion of rows

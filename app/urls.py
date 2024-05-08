@@ -1,7 +1,9 @@
 from django.urls import path
 from . import views
 from django.contrib.auth import views as auth_views
-
+from django.conf import settings
+from django.conf.urls.static import static
+from .views import SuccessView
 urlpatterns = [
     path('', views.register, name='register'),
     path('login/', views.user_login, name='user_login'),
@@ -21,4 +23,7 @@ urlpatterns = [
     path('page7/', views.page7, name='page7'),
     path('page8/', views.page8, name='page8'),
     path('page9/', views.page9, name='page9'),
-]
+
+    path('success-page/', SuccessView.as_view(), name='success_page'),
+    # path('download/', DownloadView.as_view(), name='download'),
+]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

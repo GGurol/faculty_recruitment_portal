@@ -14,6 +14,6 @@ class LoginRequiredMiddleware:
         return response
     
     def requires_login(self, path):
-        paths_requiring_login = ['/page1/', '/page2/', '/page3/','/page4/','/page5/', '/page6/', '/page7/','/page8/']
+        paths_requiring_login = ['/page1/', '/page2/', '/page3/','/page4/','/page5/', '/page6/', '/page7/','/page8/','/page9/']
        
         return any(path.startswith(path_requirement) for path_requirement in paths_requiring_login)

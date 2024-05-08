@@ -1,3 +1,23 @@
 from django.contrib import admin
+from .models import *
 
-# Register your models here.
+admin.site.register(UserRegistration)
+admin.site.register(PageModel1)
+admin.site.register(PageModel2)
+admin.site.register(PageModel3)
+admin.site.register(PageModel4)
+admin.site.register(PageModel5)
+admin.site.register(PageModel6)
+admin.site.register(PageModel7)
+admin.site.register(PageModel8)
+admin.site.register(Referee)
+admin.site.register(PageModel9)
+admin.site.register(PersonalInfo)
+admin.site.register(Education)
+admin.site.register(Address)
+admin.site.register(Employment)
+admin.site.register(Publication)
+admin.site.register(Achievements)
+admin.site.register(Supervision)
+admin.site.register(Plans)
+admin.site.register(PDFFiles)

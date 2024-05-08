@@ -141,3 +141,4 @@ EMAIL_USE_TLS = True
 EMAIL_HOST_USER = "aanimeshtripathy@gmail.com"
 EMAIL_HOST_PASSWORD = "utoe sunj qfvr nupg"
 
+X_FRAME_OPTIONS = 'SAMEORIGIN'
