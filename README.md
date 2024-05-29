@@ -128,6 +128,9 @@ proj1/
 ### Success Page
 ![Success Page](screenshots/success_page.png)
 
+## License
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
 ## Contributors
 - Animesh Tripathy
 - Aman Vaibhav Jha
