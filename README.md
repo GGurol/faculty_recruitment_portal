@@ -6,6 +6,9 @@ Developed By:
 - Animesh Tripathy (2201CS16)
 - Aman Vaibhav Jha (2201AI54)
 
+## Demo Video
+[Watch the demo video](https://youtu.be/5sevJVAqKtE?si=IzWU9EMMsa4cpAEL)
+
 ## Super User Credentials
 - Username: aa@gmail.com
 - Email address: aa@gmail.com
