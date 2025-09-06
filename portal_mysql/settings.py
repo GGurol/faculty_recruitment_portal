@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-axjvl(87p80a@zvz2=2%o72(&z2#ute30zg&r5tzyksza2c)cc
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -80,13 +80,18 @@ WSGI_APPLICATION = 'portal_mysql.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'portal_project',
-        'USER': 'root',
-        'PASSWORD': 'password',
-        'HOST':'localhost',
-        'PORT':'3306',
+        'NAME': os.environ.get('DB_NAME'),
+        'USER': os.environ.get('DB_USER'),
+        'PASSWORD': os.environ.get('DB_PASS'),
+        'HOST': os.environ.get('DB_HOST'), # This must be present
+        'PORT': os.environ.get('DB_PORT'), # This must be present
+        'OPTIONS': {
+            'ssl_mode': 'DISABLED'
+        },
     }
 }
+
+
 
 
 # Password validation

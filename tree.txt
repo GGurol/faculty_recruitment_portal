@@ -1,0 +1,189 @@
+.
+├── app
+│   ├── admin.py
+│   ├── apps.py
+│   ├── forms.py
+│   ├── __init__.py
+│   ├── middleware.py
+│   ├── migrations
+│   │   ├── 0001_initial.py
+│   │   ├── 0002_application_contactdetails_correspondenceaddress_and_more.py
+│   │   ├── 0003_alter_application_advertisement_number.py
+│   │   ├── 0004_alter_application_date_of_application.py
+│   │   ├── 0005_pagemodel1_remove_contactdetails_user_and_more.py
+│   │   ├── 0006_alter_pagemodel1_marital_status.py
+│   │   ├── 0007_pagemodel2.py
+│   │   ├── 0008_pagemodel2_college_class_pagemodel2_college_division_and_more.py
+│   │   ├── 0009_pagemodel3.py
+│   │   ├── 0010_pagemodel3_area_of_research_and_more.py
+│   │   ├── 0011_pagemodel4.py
+│   │   ├── 0012_alter_pagemodel4_google_scholar_link.py
+│   │   ├── 0013_pagemodel5.py
+│   │   ├── 0014_pagemodel6.py
+│   │   ├── 0015_pagemodel7.py
+│   │   ├── 0016_page8_referee.py
+│   │   ├── 0017_pagemodel8_delete_page8.py
+│   │   ├── 0018_pagemodel9.py
+│   │   ├── 0019_achievements_address_education_personalinfo_plans_and_more.py
+│   │   ├── 0020_pdffiles.py
+│   │   ├── __init__.py
+│   │   └── __pycache__
+│   │       ├── 0001_initial.cpython-310.pyc
+│   │       ├── 0002_application_contactdetails_correspondenceaddress_and_more.cpython-310.pyc
+│   │       ├── 0003_alter_application_advertisement_number.cpython-310.pyc
+│   │       ├── 0004_alter_application_date_of_application.cpython-310.pyc
+│   │       ├── 0005_pagemodel1_remove_contactdetails_user_and_more.cpython-310.pyc
+│   │       ├── 0006_alter_pagemodel1_marital_status.cpython-310.pyc
+│   │       ├── 0007_pagemodel2.cpython-310.pyc
+│   │       ├── 0008_pagemodel2_college_class_pagemodel2_college_division_and_more.cpython-310.pyc
+│   │       ├── 0009_pagemodel3.cpython-310.pyc
+│   │       ├── 0010_pagemodel3_area_of_research_and_more.cpython-310.pyc
+│   │       ├── 0011_pagemodel4.cpython-310.pyc
+│   │       ├── 0012_alter_pagemodel4_google_scholar_link.cpython-310.pyc
+│   │       ├── 0013_pagemodel5.cpython-310.pyc
+│   │       ├── 0014_pagemodel6.cpython-310.pyc
+│   │       ├── 0015_pagemodel7.cpython-310.pyc
+│   │       ├── 0016_page8_referee.cpython-310.pyc
+│   │       ├── 0017_pagemodel8_delete_page8.cpython-310.pyc
+│   │       ├── 0018_pagemodel9.cpython-310.pyc
+│   │       ├── 0019_achievements_address_education_personalinfo_plans_and_more.cpython-310.pyc
+│   │       ├── 0020_pdffiles.cpython-310.pyc
+│   │       └── __init__.cpython-310.pyc
+│   ├── models.py
+│   ├── __pycache__
+│   │   ├── admin.cpython-310.pyc
+│   │   ├── apps.cpython-310.pyc
+│   │   ├── forms.cpython-310.pyc
+│   │   ├── __init__.cpython-310.pyc
+│   │   ├── middleware.cpython-310.pyc
+│   │   ├── models.cpython-310.pyc
+│   │   ├── urls.cpython-310.pyc
+│   │   └── views.cpython-310.pyc
+│   ├── static
+│   │   └── app
+│   │       ├── example.pdf
+│   │       ├── IITP_logo.svg.png
+│   │       ├── index.js
+│   │       ├── initial.css
+│   │       └── style.css
+│   ├── templates
+│   │   ├── app
+│   │   │   ├── 404.html
+│   │   │   ├── download.html
+│   │   │   ├── error.html
+│   │   │   ├── page1.html
+│   │   │   ├── page2.html
+│   │   │   ├── page3.html
+│   │   │   ├── page4.html
+│   │   │   ├── page5.html
+│   │   │   ├── page6.html
+│   │   │   ├── page7.html
+│   │   │   ├── page8.html
+│   │   │   ├── page9.html
+│   │   │   └── success.html
+│   │   ├── password_reset_complete.html
+│   │   ├── password_reset_confirm.html
+│   │   ├── password_reset_done.html
+│   │   ├── password_reset_form.html
+│   │   └── registration
+│   │       ├── login.html
+│   │       └── register.html
+│   ├── tests.py
+│   ├── urls.py
+│   └── views.py
+├── db.sqlite3
+├── docker-compose.yml
+├── Dockerfile
+├── ER Diagrams
+│   ├── portal_er_pdf.pdf
+│   ├── portal_er_png.png
+│   └── portal_project_er.mwb
+├── LICENSE
+├── manage.py
+├── Portal_MySQL
+│   ├── asgi.py
+│   ├── __init__.py
+│   ├── __pycache__
+│   │   ├── __init__.cpython-310.pyc
+│   │   ├── settings.cpython-310.pyc
+│   │   ├── urls.cpython-310.pyc
+│   │   └── wsgi.cpython-310.pyc
+│   ├── settings.py
+│   ├── urls.py
+│   └── wsgi.py
+├── README.md
+├── requirements.txt
+├── screenshots
+│   ├── application_form_page1.png
+│   ├── application_pdf_print.png
+│   ├── databases.png
+│   ├── Login.png
+│   ├── new_password.png
+│   ├── page9_declaration.png
+│   ├── Register.png
+│   ├── reset_password_mail.png
+│   ├── reset_password_mail_sent.png
+│   ├── Reset_password.png
+│   ├── row_add_feature.png
+│   └── success_page.png
+├── templates
+│   ├── base_form.html
+│   └── base_login.html
+├── tree.txt
+└── uploads
+    ├── certificate_10th
+    │   ├── Screenshot_2024-04-30_224507.png
+    │   ├── Screenshot_2024-05-02_091608.png
+    │   └── Screenshot_2024-05-04_032423.png
+    ├── certificate_12th
+    │   ├── Screenshot_2024-04-30_224507.png
+    │   ├── Screenshot_2024-04-30_225351.png
+    │   └── Screenshot_2024-05-04_032423.png
+    ├── files
+    │   ├── example.pdf
+    │   └── IIT_PATNA_12345678.pdf
+    ├── id_proofs
+    │   ├── Ashutosh_Tripathy_Resume_5.pdf
+    │   ├── Screenshot_173.png
+    │   └── Screenshot_2024-04-30_224507.png
+    ├── noc_undertaking
+    │   ├── Screenshot_2024-04-30_210411_nj8F9GW.png
+    │   ├── Screenshot_2024-04-30_210411.png
+    │   └── Screenshot_2024-04-30_211454.png
+    ├── other_documents
+    │   ├── Screenshot_2024-04-30_211454.png
+    │   ├── Screenshot_2024-05-04_032423.png
+    │   └── Screenshot_2024-05-07_122422.png
+    ├── pay_slip
+    │   ├── Screenshot_2024-04-30_211454.png
+    │   ├── Screenshot_2024-05-02_091608.png
+    │   └── Screenshot_2024-05-04_031519.png
+    ├── pg_documents
+    │   ├── Screenshot_2024-04-30_211454.png
+    │   ├── Screenshot_2024-04-30_211454_T1HiVk2.png
+    │   └── Screenshot_2024-05-04_032034.png
+    ├── phd_certificate
+    │   ├── Screenshot_2024-04-30_210411_0UGmXiI.png
+    │   ├── Screenshot_2024-04-30_210411.png
+    │   └── Screenshot_2024-05-04_032034.png
+    ├── photos
+    │   ├── Screenshot_2024-04-12_220033.png
+    │   └── Screenshot_2024-04-30_225351.png
+    ├── post_phd_experience
+    │   ├── Screenshot_2024-04-30_210411.png
+    │   ├── Screenshot_2024-05-04_032034.png
+    │   └── Screenshot_2024-05-04_032600.png
+    ├── research_papers
+    │   ├── Screenshot_2024-04-30_210411_gUb1FAk.png
+    │   ├── Screenshot_2024-04-30_210411.png
+    │   └── Screenshot_2024-05-04_031859.png
+    ├── signature
+    │   ├── Screenshot_2024-05-04_032034.png
+    │   ├── Screenshot_2024-05-04_032423.png
+    │   └── Screenshot_2024-05-04_032600.png
+    └── ug_documents
+        ├── Screenshot_2024-04-30_224507_1rVMtze.png
+        ├── Screenshot_2024-04-30_224507.png
+        └── Screenshot_2024-04-30_225351.png
+
+30 directories, 157 files

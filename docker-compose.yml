@@ -1,26 +1,43 @@
-version: '3'
-
+# docker-compose.yml
 services:
+  db:
+    # Use a stable MySQL 8.4 image
+    image: mysql:8.0
+    container_name: faculty_portal_db
+    environment:
+      # These variables create the database and user on first run
+      - MYSQL_DATABASE=ocrsdjango
+      - MYSQL_USER=user
+      - MYSQL_ROOT_PASSWORD=Sfsf^+%.123 # Set a root password
+      - MYSQL_PASSWORD=22222222
+    volumes:
+      # This makes your database data persist
+      - db_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "user", "-p22222222"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
   web:
     build: .
+    container_name: faculty_portal_app
     command: python manage.py runserver 0.0.0.0:8000
     volumes:
-      - .:/code
+      - .:/app
     ports:
       - "8000:8000"
     environment:
+      # These variables are passed to your Django app
+      - DB_NAME=ocrsdjango
+      - DB_USER=user
+      - DB_PASS=22222222 # Use the password set above, can be empty
       - DB_HOST=db
-      - DB_NAME=portal_project
-      - DB_USER=root
-      - DB_PASSWORD=password
       - DB_PORT=3306
     depends_on:
-      - db
+      db:
+        # This waits for the database to be ready before starting Django
+        condition: service_healthy
 
-  db:
-    image: mysql:latest
-    environment:
-      - MYSQL_ROOT_PASSWORD=password
-      - MYSQL_DATABASE=portal_project
-    ports:
-      - "3306:3306"
+volumes:
+  db_data:
